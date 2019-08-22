@@ -2,25 +2,25 @@
   "predictions": [
     {
       "id": 1,
-      "user.id": 2,
-      "homeCountry.id": 3,
-      "awayCountry.id": 4,
+      "userId": 2,
+      "homeCountryId": 3,
+      "awayCountryId": 4,
       "homeScore": 2,
       "awayScore": 2
     },
     {
       "id": 2,
-      "user.id": 2,
-      "homeCountry.id": 5,
-      "awayCountry.id": 8,
+      "userId": 2,
+      "homeCountryId": 5,
+      "awayCountryId": 8,
       "homeScore": 8,
       "awayScore": 0
     },
     {
       "id": 3,
-      "user.id": 4,
-      "homeCountry.id": 1,
-      "awayCountry.id": 20,
+      "userId": 4,
+      "homeCountryId": 1,
+      "awayCountryId": 20,
       "homeScore": 2,
       "awayScore": 1
     }

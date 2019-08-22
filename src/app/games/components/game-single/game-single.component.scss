@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+
+.game {
+  &-single {
+    padding: 20px 15px;
+    border: 1px solid $colorAlto;
+    border-radius: $borderRadius-default;
+    margin: 5px 0 15px;
+  }
+}

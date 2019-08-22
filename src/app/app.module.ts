@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { GamesModule } from './games/games.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production
     AppRoutingModule,
     SharedModule,
     CoreModule,
+    GamesModule,
     StoreModule.forRoot({}, { metaReducers }),
     EffectsModule.forRoot([]),
     environment.development ? StoreDevtoolsModule.instrument() : [],
