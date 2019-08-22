@@ -1,5 +1,8 @@
 <h1>All games</h1>
 <hr />
 <div class="wrapper">
-  <app-game-single *ngFor="let game of games" [game]="game"></app-game-single>
+  <app-game-single
+    *ngFor="let game of games$ | async"
+    [game]="game"
+  ></app-game-single>
 </div>

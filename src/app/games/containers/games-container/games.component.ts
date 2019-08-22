@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import * as fromStore from '../../store';
+
 import { Game } from '../../models/game.model';
 
 @Component({
@@ -7,33 +13,11 @@ import { Game } from '../../models/game.model';
   styleUrls: ['./games.component.scss'],
 })
 export class GamesComponent implements OnInit {
-  games: Game[] = [
-    {
-      id: 1,
-      userId: 2,
-      homeCountryId: 3,
-      awayCountryId: 4,
-      homeScore: 2,
-      awayScore: 2,
-    },
-    {
-      id: 2,
-      userId: 2,
-      homeCountryId: 5,
-      awayCountryId: 8,
-      homeScore: 8,
-      awayScore: 0,
-    },
-    {
-      id: 3,
-      userId: 4,
-      homeCountryId: 1,
-      awayCountryId: 20,
-      homeScore: 2,
-      awayScore: 1,
-    },
-  ];
-  constructor() {}
+  games$: Observable<Game[]>;
 
-  ngOnInit() {}
+  constructor(private store: Store<fromStore.AllGamesState>) {}
+
+  ngOnInit() {
+    this.games$ = this.store.select(fromStore.getAllGames);
+  }
 }
