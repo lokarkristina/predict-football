@@ -1,0 +1,53 @@
+@import './variables';
+
+.btn {
+  display: block;
+  border: 1.5px solid $colorMineShaft;
+  border-radius: $borderRadius-default;
+  padding: 10px 15px;
+  color: $colorMineShaft;;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:focus,
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorMineShaft;
+    text-decoration: none;
+  }
+
+  &-small {
+    display: inline-block;
+    padding: 8px 13px;
+    border: 1px solid;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+
+  &-danger {
+    border-color: $colorChesnutRose;
+    color: $colorChesnutRose;
+
+    &:focus,
+    &:hover {
+      background-color: $colorChesnutRose;
+      color: $colorWhite;
+    }
+  }
+
+  &-success {
+    border-color: $colorMantis;
+    color: $colorMantis;
+
+    &:focus,
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorMantis;
+    }
+  }
+
+  &[disabled] {
+    text-decoration: line-through;
+  }
+}

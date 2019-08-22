@@ -1,0 +1,168 @@
+{
+  "predictions": [
+    {
+      "id": 1,
+      "user.id": 2,
+      "homeCountry.id": 3,
+      "awayCountry.id": 4,
+      "homeScore": 2,
+      "awayScore": 2
+    },
+    {
+      "id": 2,
+      "user.id": 2,
+      "homeCountry.id": 5,
+      "awayCountry.id": 8,
+      "homeScore": 8,
+      "awayScore": 0
+    },
+    {
+      "id": 3,
+      "user.id": 4,
+      "homeCountry.id": 1,
+      "awayCountry.id": 20,
+      "homeScore": 2,
+      "awayScore": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@mail.com",
+      "password": "admin",
+      "name": "Admin",
+      "admin": true
+    },
+    {
+      "id": 2,
+      "email": "user2@mail.com",
+      "password": "123456",
+      "name": "User Two",
+      "admin": false
+    },
+    {
+      "id": 3,
+      "email": "user3@mail.com",
+      "password": "123456",
+      "name": "User Three",
+      "admin": false
+    },
+    {
+      "id": 4,
+      "email": "user4@mail.com",
+      "password": "123456",
+      "name": "User Four",
+      "admin": false
+    }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "name": "Albania"
+    },
+    {
+      "id": 2,
+      "name": "Algeria"
+    },
+    {
+      "id": 3,
+      "name": "Argentina"
+    },
+    {
+      "id": 4,
+      "name": "Bahamas"
+    },
+    {
+      "id": 5,
+      "name": "Belgium"
+    },
+    {
+      "id": 6,
+      "name": "Brazil"
+    },
+    {
+      "id": 7,
+      "name": "Cambodia"
+    },
+    {
+      "id": 8,
+      "name": "Canada"
+    },
+    {
+      "id": 9,
+      "name": "Chile"
+    },
+    {
+      "id": 10,
+      "name": "Czech Republic"
+    },
+    {
+      "id": 11,
+      "name": "Denmark"
+    },
+    {
+      "id": 12,
+      "name": "Estonia"
+    },
+    {
+      "id": 13,
+      "name": "France"
+    },
+    {
+      "id": 14,
+      "name": "Germany"
+    },
+    {
+      "id": 15,
+      "name": "Guatemala"
+    },
+    {
+      "id": 16,
+      "name": "Italy"
+    },
+    {
+      "id": 17,
+      "name": "Japan"
+    },
+    {
+      "id": 18,
+      "name": "Latvia"
+    },
+    {
+      "id": 19,
+      "name": "Malaysia"
+    },
+    {
+      "id": 20,
+      "name": "Mexico"
+    },
+    {
+      "id": 21,
+      "name": "Morocco"
+    },
+    {
+      "id": 22,
+      "name": "Netherlands"
+    },
+    {
+      "id": 23,
+      "name": "Slovenia"
+    },
+    {
+      "id": 24,
+      "name": "Spain"
+    },
+    {
+      "id": 25,
+      "name": "Swaziland"
+    },
+    {
+      "id": 26,
+      "name": "Sweden"
+    },
+    {
+      "id": 27,
+      "name": "United States"
+    }
+  ]
+}

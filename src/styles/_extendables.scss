@@ -1,0 +1,91 @@
+@import './variables';
+@import './breakpoints';
+
+%container,
+.container {
+  width: 100%;
+  max-width: $container-width;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include sm {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+%table-responsive,
+.table-responsive {
+  display: table;
+  border-radius: $borderRadius-default;
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+
+  @include sm {
+    display: block;
+    width: 100%;
+  }
+
+  .table-row {
+    display: table-row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-right: -15px;
+    margin-left: -15px;
+
+    @include sm {
+      display: flex;
+      padding: 30px 15px 18px 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    &.row-header {
+      font-weight: bold;
+
+      @include sm {
+        display: none;
+      }
+    }
+  }
+
+  .cell {
+    display: table-cell;
+    padding: 20px 0;
+
+    @include sm {
+      padding: 16px 0 16px 30px;
+    }
+
+    &::before {
+      display: block;
+      width: 100%;
+      margin-bottom: 13px;
+      color: $colorAlto;
+      font-size: 1.2rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      
+      @include sm {
+        content: attr(data-title);
+      }
+    }
+
+    &:nth-child(1) {
+      padding-left: 40px;
+
+      @include sm {
+        padding-left: 30px;
+      }
+    }
+
+    &:last-child {
+      @include sm {
+        margin-left: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: $colorWhite;
+	color: $colorBlack;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.2;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+}
+
+main {
+	// 100vh - header - footer
+	min-height: calc(100vh - 76px - 21px)
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	color: $colorBlack;
+	text-decoration: none;
+	transition: ease 0.3s;
+
+	&:focus,
+	&:hover {
+		text-decoration: underline;
+	}
+}
