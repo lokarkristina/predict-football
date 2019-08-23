@@ -1,0 +1,29 @@
+<form
+  [formGroup]="predictionForm"
+  (ngSubmit)="onSubmit(home, away)"
+  class="form-predictions"
+>
+  <div class="form-group">
+    <input
+      type="number"
+      name="homeScore"
+      id="homeScore"
+      class="form-control"
+      formControlName="homeScore"
+      #home
+    />
+    <label for="homeScore">Home</label>
+  </div>
+  <div class="form-group">
+    <input
+      type="number"
+      name="awayScore"
+      id="awayScore"
+      class="form-control"
+      formControlName="awayScore"
+      #away
+    />
+    <label for="awayScore">Guest</label>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>

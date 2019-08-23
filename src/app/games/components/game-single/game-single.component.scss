@@ -7,6 +7,15 @@
     margin-bottom: 20px;
   }
 
+  &-single__footer {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      width: 100%;
+    }
+  }
+
   &-single {
     padding: 20px 15px;
     border: 1px solid $colorAlto;

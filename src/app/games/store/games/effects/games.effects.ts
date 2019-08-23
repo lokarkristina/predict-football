@@ -34,4 +34,16 @@ export class GamesEffects {
       );
     })
   );
+
+  @Effect()
+  addPrediction$ = this.actions$.pipe(
+    ofType(GameActions.ADD_PREDICTION),
+    map((action: GameActions.AddPrediction) => action.payload),
+    switchMap(prediction => {
+      return this.gamesService.addPrediction(prediction).pipe(
+        map(prediction => new GameActions.AddPredictionSuccess(prediction)),
+        catchError(error => of(new GameActions.AddPredictionFail(error)))
+      );
+    })
+  );
 }

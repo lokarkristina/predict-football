@@ -1,7 +1,7 @@
-<div class="game-single__header">
+<div class="game-single__header" *ngIf="game">
   <a [routerLink]="['/games']">< Back to all games</a>
 </div>
-<div class="game-single__body game-single" *ngIf="game">
+<div class="game-single__body game-single">
   <div class="game__number">
     <h1>Game #{{ game.id }}</h1>
   </div>
@@ -14,5 +14,19 @@
       {{ game.awayCountryId }}
     </div>
   </div>
-  Predictions
+</div>
+<div class="game-single__footer">
+  <div class="footer__left">
+    <h3>My prediciton</h3>
+    <app-prediction-add
+      [gameId]="game.id"
+      [homeCountryId]="game.homeCountryId"
+      [awayCountryId]="game.awayCountryId"
+      [homeScore]="game.homeScore"
+      [awayScore]="game.awayScore"
+    ></app-prediction-add>
+  </div>
+  <div class="footer__right">
+    <h4>Predictions by other users</h4>
+  </div>
 </div>

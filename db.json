@@ -23,6 +23,22 @@
       "awayCountryId": 20,
       "homeScore": 2,
       "awayScore": 1
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "homeCountryId": 5,
+      "awayCountryId": 8,
+      "homeScore": 8,
+      "awayScore": 12
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "homeCountryId": 5,
+      "awayCountryId": 8,
+      "homeScore": 1,
+      "awayScore": 1
     }
   ],
   "users": [

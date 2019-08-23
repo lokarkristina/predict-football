@@ -67,6 +67,19 @@ export function reducer(
       };
     }
 
+    case fromGames.ADD_PREDICTION_SUCCESS: {
+      const prediction = action.payload;
+      const entities = {
+        ...state.entities,
+        [prediction.id]: prediction,
+      };
+
+      return {
+        ...state,
+        entities,
+      };
+    }
+
     default:
       return state;
   }

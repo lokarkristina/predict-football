@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // store
 import { StoreModule } from '@ngrx/store';
@@ -16,12 +17,19 @@ import { GameSingleResolver } from './routing/resolvers/game-single.resolver';
 import { GamesComponent } from './containers/games-container/games.component';
 import { GameSingleComponent } from './components/game-single/game-single.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
+import { PredictionAddComponent } from './components/prediction-add/prediction-add.component';
 
 @NgModule({
-  declarations: [GamesComponent, GameSingleComponent, GameDetailsComponent],
+  declarations: [
+    GamesComponent,
+    GameSingleComponent,
+    GameDetailsComponent,
+    PredictionAddComponent,
+  ],
   imports: [
     SharedModule,
     GamesRoutingModule,
+    ReactiveFormsModule,
     StoreModule.forFeature('games', reducers),
     EffectsModule.forFeature(effects),
   ],

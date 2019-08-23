@@ -23,4 +23,11 @@ export class GamesService {
       .get<Game>(`${this.url}/${id}`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
+
+  // Add = update v resnice, ker updatea Game s tem ko mu doda še score
+  addPrediction(payload: Game): Observable<Game> {
+    return this.http
+      .put<Game>(`${this.url}/${payload.id}`, payload)
+      .pipe(catchError((error: any) => Observable.throw(error.json())));
+  }
 }
