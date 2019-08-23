@@ -14,7 +14,7 @@ html {
 body {
 	background-color: $colorWhite;
 	color: $colorBlack;
-	font-family: 'Titillium Web', sans-serif;
+	font-family: $fontBody;
 	font-size: 1.6rem;
 	line-height: 1.2;
 	text-rendering: optimizeLegibility !important;
