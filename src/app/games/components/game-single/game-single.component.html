@@ -1,14 +1,15 @@
-<div class="game-single">
-  <a routerLink="game/{{ game.id }}">
-    <div class="game__number">Game #{{ game.id }}</div>
-    <div class="game__players-wrapper">
-      <div class="game__playes-home">
-        {{ game.homeCountryId }}
-      </div>
-      <span>:</span>
-      <div class="game__playes-away">
-        {{ game.awayCountryId }}
-      </div>
+<div class="game-single" *ngIf="game">
+  <div class="game__number">
+    <h1>Game #{{ game.id }}</h1>
+  </div>
+  <div class="game__players-wrapper">
+    <div class="game__playes-home">
+      {{ game.homeCountryId }}
     </div>
-  </a>
+    <span>:</span>
+    <div class="game__playes-away">
+      {{ game.awayCountryId }}
+    </div>
+  </div>
+  Predictions
 </div>

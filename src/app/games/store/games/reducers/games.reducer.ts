@@ -54,6 +54,19 @@ export function reducer(
       };
     }
 
+    case fromGames.FETCH_GAME_SUCCESS: {
+      const game = action.payload;
+      const entities = {
+        ...state.entities,
+        [game.id]: game,
+      };
+
+      return {
+        ...state,
+        entities,
+      };
+    }
+
     default:
       return state;
   }

@@ -17,4 +17,10 @@ export class GamesService {
       .get<Game[]>(this.url)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
+
+  fetchGame(id: number): Observable<Game> {
+    return this.http
+      .get<Game>(`${this.url}/${id}`)
+      .pipe(catchError((error: any) => Observable.throw(error.json())));
+  }
 }

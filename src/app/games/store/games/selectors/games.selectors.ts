@@ -1,4 +1,4 @@
-import { createSelector } from '@ngrx/store';
+import { createSelector, MemoizedSelector } from '@ngrx/store';
 
 import * as fromFeature from '../reducers';
 import * as fromGames from '../reducers/games.reducer';
@@ -19,3 +19,13 @@ export const getAllGames = createSelector(
     return Object.keys(entities).map(id => entities[id]);
   }
 );
+
+export const getSelectedGame: (
+  key: number
+) => MemoizedSelector<fromFeature.AllGamesState, any> = (id: number) =>
+  createSelector(
+    getAllGamesState,
+    (state: fromGames.GameState) => {
+      return state.entities[id];
+    }
+  );

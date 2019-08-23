@@ -22,4 +22,16 @@ export class GamesEffects {
       );
     })
   );
+
+  @Effect()
+  fetchGame$ = this.actions$.pipe(
+    ofType(GameActions.FETCH_GAME),
+    map((action: GameActions.FetchGame) => action.payload),
+    switchMap(id => {
+      return this.gamesService.fetchGame(id).pipe(
+        map(game => new GameActions.FetchGameSuccess(game)),
+        catchError(error => of(new GameActions.FetchGameFail(error)))
+      );
+    })
+  );
 }

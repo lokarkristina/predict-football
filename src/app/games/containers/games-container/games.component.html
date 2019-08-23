@@ -1,8 +1,9 @@
-<h1>All games</h1>
-<hr />
-<div class="wrapper">
-  <app-game-single
-    *ngFor="let game of games$ | async"
-    [game]="game"
-  ></app-game-single>
+<div>
+  <h1>All games</h1>
+  <hr />
+  <div class="wrapper">
+    <div *ngFor="let game of games$ | async">
+      <app-game-details [game]="game" class="game-details"></app-game-details>
+    </div>
+  </div>
 </div>
