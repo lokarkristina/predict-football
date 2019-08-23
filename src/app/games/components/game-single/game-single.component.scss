@@ -1,6 +1,12 @@
 @import '../../../../styles/variables';
 
 .game {
+  &-single__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
   &-single {
     padding: 20px 15px;
     border: 1px solid $colorAlto;

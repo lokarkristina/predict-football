@@ -1,4 +1,7 @@
-<div class="game-single" *ngIf="game">
+<div class="game-single__header">
+  <a [routerLink]="['/games']">< Back to all games</a>
+</div>
+<div class="game-single__body game-single" *ngIf="game">
   <div class="game__number">
     <h1>Game #{{ game.id }}</h1>
   </div>
