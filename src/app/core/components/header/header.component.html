@@ -1,6 +1,10 @@
 <div class="header">
   <nav class="header__nav">
-    <li class="nav__item">
+    <li
+      class="nav__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <a routerLink="/">Home</a>
     </li>
     <li class="nav__item" routerLinkActive="active">

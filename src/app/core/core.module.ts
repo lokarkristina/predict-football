@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoreStoreModule } from './store/core-store.module';
 
@@ -22,6 +23,7 @@ import { GameResolver } from '../games/routing/resolvers/game.resolver';
     HttpClientModule,
     CoreRoutingModule,
     CoreStoreModule,
+    ReactiveFormsModule,
     GamesModule,
   ],
   exports: [HomepageComponent, HeaderComponent],
