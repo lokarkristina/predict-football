@@ -8,7 +8,7 @@ import { GameResolver } from './resolvers/game.resolver';
 import { GameSingleResolver } from './resolvers/game-single.resolver';
 
 // components
-import { GameSingleComponent } from '../components/game-single/game-single.component';
+import { GameSingleComponent } from '../containers/game-single/game-single.component';
 import { GamesComponent } from '../containers/games-container/games.component';
 
 const routes: Routes = [
