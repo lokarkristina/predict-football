@@ -8,14 +8,14 @@ export interface GameState {
   loading: boolean;
 }
 
-export const initialState: GameState = {
+export const initialStateGames: GameState = {
   entities: {},
   loaded: false,
   loading: false,
 };
 
 export function GamesReducer(
-  state = initialState,
+  state = initialStateGames,
   action: fromGames.GamesActions
 ): GameState {
   switch (action.type) {

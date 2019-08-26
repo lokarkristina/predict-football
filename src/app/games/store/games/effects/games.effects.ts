@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { switchMap, map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 import * as GameActions from '../actions/games.actions';
 
 import { GamesService } from 'src/app/core/services/games.service';
-import { of } from 'rxjs';
 
 @Injectable()
 export class GamesEffects {

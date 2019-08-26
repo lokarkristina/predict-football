@@ -2,10 +2,10 @@
   "predictions": [
     {
       "id": 1,
-      "userId": 2,
-      "homeCountryId": 3,
-      "awayCountryId": 4,
-      "homeScore": 2,
+      "userId": 1,
+      "homeCountryId": 1,
+      "awayCountryId": 27,
+      "homeScore": 6,
       "awayScore": 2
     },
     {
@@ -35,10 +35,18 @@
     {
       "id": 5,
       "userId": 1,
-      "homeCountryId": 5,
-      "awayCountryId": 8,
+      "homeCountryId": 15,
+      "awayCountryId": 18,
       "homeScore": 1,
       "awayScore": 1
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "homeCountryId": 1,
+      "awayCountryId": 12,
+      "homeScore": 6,
+      "awayScore": 2
     }
   ],
   "users": [
@@ -74,111 +82,138 @@
   "countries": [
     {
       "id": 1,
-      "name": "Albania"
+      "name": "Albania",
+      "flagImg": "https://www.countryflags.io/al/flat/64.png"
     },
     {
       "id": 2,
-      "name": "Algeria"
+      "name": "Algeria",
+      "flagImg": "https://www.countryflags.io/dz/flat/64.png"
     },
     {
       "id": 3,
-      "name": "Argentina"
+      "name": "Argentina",
+      "flagImg": "https://www.countryflags.io/ar/flat/64.png"
     },
     {
       "id": 4,
-      "name": "Bahamas"
+      "name": "Bahamas",
+      "flagImg": "https://www.countryflags.io/bs/flat/64.png"
     },
     {
       "id": 5,
-      "name": "Belgium"
+      "name": "Belgium",
+      "flagImg": "https://www.countryflags.io/be/flat/64.png"
     },
     {
       "id": 6,
-      "name": "Brazil"
+      "name": "Brazil",
+      "flagImg": "https://www.countryflags.io/br/flat/64.png"
     },
     {
       "id": 7,
-      "name": "Cambodia"
+      "name": "Cambodia",
+      "flagImg": "https://www.countryflags.io/kh/flat/64.png"
     },
     {
       "id": 8,
-      "name": "Canada"
+      "name": "Canada",
+      "flagImg": "https://www.countryflags.io/ca/flat/64.png"
     },
     {
       "id": 9,
-      "name": "Chile"
+      "name": "Chile",
+      "flagImg": "https://www.countryflags.io/cl/flat/64.png"
     },
     {
       "id": 10,
-      "name": "Czech Republic"
+      "name": "Czech Republic",
+      "flagImg": "https://www.countryflags.io/cz/flat/64.png"
     },
     {
       "id": 11,
-      "name": "Denmark"
+      "name": "Denmark",
+      "flagImg": "https://www.countryflags.io/dk/flat/64.png"
     },
     {
       "id": 12,
-      "name": "Estonia"
+      "name": "Estonia",
+      "flagImg": "https://www.countryflags.io/es/flat/64.png"
     },
     {
       "id": 13,
-      "name": "France"
+      "name": "France",
+      "flagImg": "https://www.countryflags.io/fr/flat/64.png"
     },
     {
       "id": 14,
-      "name": "Germany"
+      "name": "Germany",
+      "flagImg": "https://www.countryflags.io/de/flat/64.png"
     },
     {
       "id": 15,
-      "name": "Guatemala"
+      "name": "Guatemala",
+      "flagImg": "https://www.countryflags.io/gt/flat/64.png"
     },
     {
       "id": 16,
-      "name": "Italy"
+      "name": "Italy",
+      "flagImg": "https://www.countryflags.io/it/flat/64.png"
     },
     {
       "id": 17,
-      "name": "Japan"
+      "name": "Japan",
+      "flagImg": "https://www.countryflags.io/jp/flat/64.png"
     },
     {
       "id": 18,
-      "name": "Latvia"
+      "name": "Latvia",
+      "flagImg": "https://www.countryflags.io/lv/flat/64.png"
     },
     {
       "id": 19,
-      "name": "Malaysia"
+      "name": "Malaysia",
+      "flagImg": "https://www.countryflags.io/my/flat/64.png"
     },
     {
       "id": 20,
-      "name": "Mexico"
+      "name": "Mexico",
+      "flagImg": "https://www.countryflags.io/mx/flat/64.png"
     },
     {
       "id": 21,
-      "name": "Morocco"
+      "name": "Morocco",
+      "flagImg": "https://www.countryflags.io/ma/flat/64.png"
     },
     {
       "id": 22,
-      "name": "Netherlands"
+      "name": "Netherlands",
+      "flagImg": "https://www.countryflags.io/nl/flat/64.png"
     },
     {
       "id": 23,
-      "name": "Slovenia"
+      "name": "Slovenia",
+      "flagImg": "https://www.countryflags.io/sl/flat/64.png"
     },
     {
       "id": 24,
-      "name": "Spain"
+      "name": "Spain",
+      "flagImg": "https://www.countryflags.io/es/flat/64.png"
     },
     {
       "id": 25,
-      "name": "Swaziland"
+      "name": "Switzerland",
+      "flagImg": "https://www.countryflags.io/ch/flat/64.png"
     },
     {
       "id": 26,
-      "name": "Sweden"
+      "name": "Sweden",
+      "flagImg": "https://www.countryflags.io/se/flat/64.png"
     },
     {
       "id": 27,
-      "name": "United States"
+      "name": "United States",
+      "flagImg": "https://www.countryflags.io/us/flat/64.png"
     }
   ]
 }

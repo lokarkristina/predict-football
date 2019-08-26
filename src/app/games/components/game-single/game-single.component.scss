@@ -31,18 +31,60 @@
 
   &__players-wrapper {
     display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 35px;
+    border: 2px dashed $colorAlto;
+    border-radius: $borderRadius-default;
+    margin-top: 40px;
+    background-color: $colorAlto-01;
 
     > div {
+      display: flex;
+      flex-direction: column;
       margin: 0 10px;
+      max-width: 50%;
+      width: 100%;
     }
   }
 
   &-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 4rem;
+    text-align: center;
+  }
+
+  &__predictions {
+    width: 100%;
+    margin-top: 40px;
+
+    h4 {
+      text-align: center;
+    }
+  }
+}
+
+.player-flag {
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px;
+  max-height: 150px;
+
+  img {
+    object-fit: cover;
   }
 }
 
 .spacer {
-  color: $colorAlto;
+  align-self: center;
+  color: $colorMineShaft;
   font-size: 3.8rem;
+
+  &-name {
+    display: block;
+    font-size: 1.3rem;
+    text-align: center;
+  }
 }

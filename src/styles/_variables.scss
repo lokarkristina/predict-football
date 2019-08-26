@@ -2,6 +2,7 @@
 $colorWhite:            #ffffff;
 $colorAlto:             #D4D4D4;
 $colorAlto-06:          rgba(212, 212, 212, 0.6);
+$colorAlto-01:          rgba(212, 212, 212, 0.1);
 $colorSilverChalice:    #999999;
 $colorMineShaft:        #262626;
 $colorBlack:            #000000;
@@ -22,3 +23,6 @@ $boxShadow-default-hover:   0 0 15px $colorAlto;
 // Fonts
 $fontBody: 'Montserrat', sans-serif;
 $fontHeading: 'Noto Sans TC', sans-serif;
+
+// Transitions
+$transition-default: all ease 0.3s;

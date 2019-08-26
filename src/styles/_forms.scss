@@ -16,8 +16,20 @@
   background-clip: padding-box;
   border: 1px solid $colorAlto;
   border-radius: $borderRadius-default;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: $transition-default;
 
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+
+  &[type=number] {
+    border: 1px dashed $colorAlto;
+
+    &:focus {
+      border-style: solid;
+    }
+  }
 }
 
 label {
@@ -27,8 +39,16 @@ label {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   font-size: 1.3rem;
+  transition: $transition-default;
 
   input {
     margin-top: .5rem;
   }
+}
+
+// Remove arrows for number inputs
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

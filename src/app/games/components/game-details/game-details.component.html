@@ -1,13 +1,15 @@
 <div class="game-details">
   <a [routerLink]="['/games', game.id]">
-    <div class="game__number">Game #{{ game.id }}</div>
+    <div class="game__number">
+      <h3>Game #{{ game.id }}</h3>
+    </div>
     <div class="game__players-wrapper">
       <div class="game__playes-home">
-        {{ game.homeCountryId }}
+        {{ homeCountryName }}
       </div>
       <span>:</span>
       <div class="game__playes-away">
-        {{ game.awayCountryId }}
+        {{ awayCountryName }}
       </div>
     </div>
   </a>

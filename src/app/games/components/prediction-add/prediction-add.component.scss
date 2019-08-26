@@ -1,0 +1,36 @@
+@import '../../../../styles/variables';
+
+.form {
+  &-predictions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-items-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &-group {
+    label {
+      display: block;
+      font-size: 1.2rem;
+      text-transform: none;
+      line-height: 2;
+      text-align: right;
+      color: $colorAlto;
+    }
+  }
+
+  &-control {
+    text-align: center;
+    max-width: 100px;
+
+    &:focus + label {
+      color: $colorMineShaft;
+    }
+  }
+}

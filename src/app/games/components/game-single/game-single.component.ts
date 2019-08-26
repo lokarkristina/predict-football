@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 
 import { Game } from '../../models/game.model';
+import { Country } from '../../models/country.model';
 
 import * as fromStore from '../../store';
 @Component({
@@ -13,8 +13,11 @@ import * as fromStore from '../../store';
   styleUrls: ['./game-single.component.scss'],
 })
 export class GameSingleComponent implements OnInit {
-  game: Observable<Game>;
+  game: Game;
   id: number;
+
+  homeCountry: Country;
+  awayCountry: Country;
 
   constructor(
     private store: Store<fromStore.GameState>,
@@ -24,8 +27,20 @@ export class GameSingleComponent implements OnInit {
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
 
-    this.store
-      .select(fromStore.getSelectedGame(this.id))
-      .subscribe(game => (this.game = game));
+    this.store.select(fromStore.getSelectedGame(this.id)).subscribe(game => {
+      this.game = game;
+
+      if (!this.game) {
+        return;
+      }
+
+      this.store
+        .select(fromStore.getSelectedCountry(this.game.homeCountryId - 1))
+        .subscribe(country => country && (this.homeCountry = country));
+
+      this.store
+        .select(fromStore.getSelectedCountry(this.game.awayCountryId - 1))
+        .subscribe(country => country && (this.awayCountry = country));
+    });
   }
 }

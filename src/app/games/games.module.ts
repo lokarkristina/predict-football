@@ -6,7 +6,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { effects } from '../games/store';
+
+// reducers
 import { GamesReducer } from '../games/store/games/reducers/games.reducer';
+import { CountriesReducer } from '../games/store/countries/reducers/countries.reducer';
 
 import { SharedModule } from '../shared/shared.module';
 import { GamesRoutingModule } from './routing/games-routing.module';
@@ -32,6 +35,7 @@ import { PredictionAddComponent } from './components/prediction-add/prediction-a
     GamesRoutingModule,
     ReactiveFormsModule,
     StoreModule.forFeature('games', GamesReducer),
+    StoreModule.forFeature('countries', CountriesReducer),
     EffectsModule.forFeature(effects),
   ],
   exports: [GamesComponent],

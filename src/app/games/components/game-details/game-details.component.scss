@@ -1,10 +1,65 @@
 @import '../../../../styles/variables';
+@import '../../../../styles/breakpoints';
 
 .game {
   &-details {
-    padding: 20px 15px;
-    border: 1px solid $colorAlto;
-    border-radius: $borderRadius-default;
     margin: 5px 0 15px;
+    
+    > a {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: 1fr;
+      padding: 20px 15px;
+      border-radius: $borderRadius-default;
+      border: 1px solid $colorAlto;
+
+      @include sm {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+      }
+
+      &:focus,
+      &:hover {
+        text-decoration: none;
+        border: 1px solid $colorMineShaft;
+        box-shadow: $boxShadow-default;
+      }
+    }
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    &::after {
+      content: ':';
+      display: inline-block;
+      color: $colorAlto;
+      font-size: 2.7rem;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__players-wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.5fr 20px 0.5fr 0.5fr;
+    align-items: center;
+    font-size: 3.6rem;
+
+    @include sm {
+      grid-template-columns: 0.5fr 20px 0.5fr;
+      font-size: 2.6rem;
+    }
+
+    @include xs {
+      font-size: 2.2rem;
+    }
+
+    > * {
+      text-align: center;
+    }
   }
 }
