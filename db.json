@@ -10,18 +10,18 @@
     },
     {
       "id": 2,
-      "userId": 2,
+      "userId": 1,
       "homeCountryId": 5,
       "awayCountryId": 8,
-      "homeScore": 8,
+      "homeScore": 3,
       "awayScore": 0
     },
     {
       "id": 3,
-      "userId": 4,
+      "userId": 1,
       "homeCountryId": 1,
       "awayCountryId": 20,
-      "homeScore": 2,
+      "homeScore": 7,
       "awayScore": 1
     },
     {
