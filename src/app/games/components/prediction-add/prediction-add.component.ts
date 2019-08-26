@@ -22,7 +22,7 @@ export class PredictionAddComponent implements OnInit {
   userId = 1;
   message: string;
 
-  constructor(private store: Store<fromStore.AllGamesState>) {}
+  constructor(private store: Store<fromStore.GameState>) {}
 
   ngOnInit() {
     this.buildForm();

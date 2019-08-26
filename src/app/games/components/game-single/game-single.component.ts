@@ -17,7 +17,7 @@ export class GameSingleComponent implements OnInit {
   id: number;
 
   constructor(
-    private store: Store<fromStore.AllGamesState>,
+    private store: Store<fromStore.GameState>,
     private route: ActivatedRoute
   ) {}
 

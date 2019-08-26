@@ -14,7 +14,7 @@ export const initialState: GameState = {
   loading: false,
 };
 
-export function reducer(
+export function GamesReducer(
   state = initialState,
   action: fromGames.GamesActions
 ): GameState {

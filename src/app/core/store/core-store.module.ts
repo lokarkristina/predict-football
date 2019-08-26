@@ -8,6 +8,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [],
-  imports: [SharedModule, StoreModule.forFeature('APP', {})],
+  imports: [SharedModule],
 })
 export class CoreStoreModule {}

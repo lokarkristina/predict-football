@@ -15,7 +15,7 @@ import { Game } from '../../models/game.model';
 export class GamesComponent implements OnInit {
   games$: Observable<Game[]>;
 
-  constructor(private store: Store<fromStore.AllGamesState>) {}
+  constructor(private store: Store<fromStore.GameState>) {}
 
   ngOnInit() {
     this.games$ = this.store.select(fromStore.getAllGames);

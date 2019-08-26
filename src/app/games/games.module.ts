@@ -5,7 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { reducers, effects } from '../games/store';
+import { effects } from '../games/store';
+import { GamesReducer } from '../games/store/games/reducers/games.reducer';
 
 import { SharedModule } from '../shared/shared.module';
 import { GamesRoutingModule } from './routing/games-routing.module';
@@ -30,7 +31,7 @@ import { PredictionAddComponent } from './components/prediction-add/prediction-a
     SharedModule,
     GamesRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forFeature('games', reducers),
+    StoreModule.forFeature('games', GamesReducer),
     EffectsModule.forFeature(effects),
   ],
   exports: [GamesComponent],
