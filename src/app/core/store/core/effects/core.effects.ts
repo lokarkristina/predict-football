@@ -34,4 +34,16 @@ export class CoreEffects {
       );
     })
   );
+
+  @Effect()
+  loginUser$ = this.actions$.pipe(
+    ofType(CoreActions.LOGIN_USER),
+    map((action: CoreActions.LoginUser) => action.payload),
+    switchMap(id => {
+      return this.userService.fetchUser(id).pipe(
+        map(user => new CoreActions.LoginUserSuccess(user)),
+        catchError(error => of(new CoreActions.LoginUserFail(error)))
+      );
+    })
+  );
 }

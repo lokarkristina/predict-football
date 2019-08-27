@@ -1,5 +1,12 @@
 <div class="container">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(email, password)">
+  <div class="alert" *ngIf="message">
+    {{ message }}
+  </div>
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit(email, password)"
+    *ngIf="!userLoggedIn; else logout"
+  >
     <div class="form-group">
       <label for="email">Email</label>
       <input
@@ -32,4 +39,7 @@
       </button>
     </div>
   </form>
+  <ng-template #logout>
+    <a class="btn btn-primary" (click)="onLogout()">Logout</a>
+  </ng-template>
 </div>

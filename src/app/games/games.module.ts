@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { effects } from '../games/store';
+import { effectsGames } from './store';
 
 // reducers
 import { GamesReducer } from '../games/store/games/reducers/games.reducer';
@@ -36,7 +36,7 @@ import { PredictionAddComponent } from './components/prediction-add/prediction-a
     ReactiveFormsModule,
     StoreModule.forFeature('games', GamesReducer),
     StoreModule.forFeature('countries', CountriesReducer),
-    EffectsModule.forFeature(effects),
+    EffectsModule.forFeature(effectsGames),
   ],
   exports: [GamesComponent],
   providers: [GameSingleResolver],

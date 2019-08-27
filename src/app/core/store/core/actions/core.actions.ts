@@ -41,6 +41,43 @@ export class FetchUserSuccess implements Action {
   constructor(public payload: User) {}
 }
 
+// Login User
+export const LOGIN_USER = '[Core] Login User';
+export const LOGIN_USER_FAIL = '[Core] Login User Fail';
+export const LOGIN_USER_SUCCESS = '[Core] Login User Success';
+
+export class LoginUser implements Action {
+  readonly type = LOGIN_USER;
+  constructor(public payload: number) {}
+}
+
+export class LoginUserFail implements Action {
+  readonly type = LOGIN_USER_FAIL;
+  constructor(public payload: any) {}
+}
+
+export class LoginUserSuccess implements Action {
+  readonly type = LOGIN_USER_SUCCESS;
+  constructor(public payload: User) {}
+}
+
+// Logout User
+export const LOGOUT_USER = '[Core] Logout User';
+export const LOGOUT_USER_FAIL = '[Core] Logout User Fail';
+export const LOGOUT_USER_SUCCESS = '[Core] Logout User Success';
+
+export class LogoutUser implements Action {
+  readonly type = LOGOUT_USER;
+}
+
+export class LogoutUserFail implements Action {
+  readonly type = LOGOUT_USER_FAIL;
+  constructor(public payload: any) {}
+}
+export class LogoutUserSuccess implements Action {
+  readonly type = LOGOUT_USER_SUCCESS;
+}
+
 // All actions
 export type CoreActions =
   | FetchUsers
@@ -48,4 +85,10 @@ export type CoreActions =
   | FetchUsersSuccess
   | FetchUser
   | FetchUserFail
-  | FetchUserSuccess;
+  | FetchUserSuccess
+  | LoginUser
+  | LoginUserFail
+  | LoginUserSuccess
+  | LogoutUser
+  | LogoutUserFail
+  | LogoutUserSuccess;

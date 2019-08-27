@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
-import { effects } from '../games/store';
+import { effectsCore } from './store';
 
 // reducers
 import { UsersReducer } from './store/core/reducers/core.reducer';
@@ -32,7 +32,7 @@ import { UserResolver } from './routing/resolvers/users.resolver';
     CoreRoutingModule,
     ReactiveFormsModule,
     StoreModule.forFeature('users', UsersReducer),
-    EffectsModule.forFeature(effects),
+    EffectsModule.forFeature(effectsCore),
     GamesModule,
   ],
   exports: [HomepageComponent, HeaderComponent],

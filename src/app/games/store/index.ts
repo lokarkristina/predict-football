@@ -1,7 +1,7 @@
 import { CountriesEffects } from './countries/effects';
 import { GamesEffects } from './games/effects';
 
-export const effects: any[] = [CountriesEffects, GamesEffects];
+export const effectsGames: any[] = [CountriesEffects, GamesEffects];
 
 export * from './games/actions';
 export * from './games/effects';

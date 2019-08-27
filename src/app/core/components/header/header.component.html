@@ -8,7 +8,7 @@
       <a routerLink="/">Home</a>
     </li>
     <li class="nav__item" routerLinkActive="active">
-      <a routerLink="/login">Login</a>
+      <a routerLink="/login">{{ userLoggedIn ? 'Logout' : 'Login' }}</a>
     </li>
   </nav>
 </div>

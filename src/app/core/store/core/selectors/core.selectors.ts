@@ -30,3 +30,10 @@ export const getSelectedUser: (
       return state.entities[id];
     }
   );
+
+export const getLoggedInUser = createSelector(
+  getUsersState,
+  (state: fromCore.UserState) => {
+    return state.loggedInUser;
+  }
+);

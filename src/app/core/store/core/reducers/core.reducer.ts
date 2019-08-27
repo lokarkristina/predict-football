@@ -6,12 +6,14 @@ export interface UserState {
   entities: { [id: number]: User };
   loaded: boolean;
   loading: boolean;
+  loggedInUser: User | null;
 }
 
 export const initialStateUser: UserState = {
   entities: {},
   loaded: false,
   loading: false,
+  loggedInUser: null,
 };
 
 export function UsersReducer(
@@ -64,6 +66,57 @@ export function UsersReducer(
         loading: false,
         loaded: true,
         entities,
+      };
+    }
+
+    case fromCore.LOGIN_USER: {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
+
+    case fromCore.LOGIN_USER_FAIL: {
+      return {
+        ...state,
+        loading: false,
+        loaded: false,
+        loggedInUser: null,
+      };
+    }
+
+    case fromCore.LOGIN_USER_SUCCESS: {
+      const user = action.payload;
+
+      return {
+        ...state,
+        loaded: true,
+        loading: false,
+        loggedInUser: user,
+      };
+    }
+
+    case fromCore.LOGOUT_USER: {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
+
+    case fromCore.LOGOUT_USER_FAIL: {
+      return {
+        ...state,
+        loading: false,
+        loaded: false,
+      };
+    }
+
+    case fromCore.LOGOUT_USER_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        loaded: true,
+        loggedInUser: null,
       };
     }
 

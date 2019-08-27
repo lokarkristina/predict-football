@@ -1,6 +1,6 @@
 import { CoreEffects } from './core/effects';
 
-export const effects: any[] = [CoreEffects];
+export const effectsCore: any[] = [CoreEffects];
 
 export * from './core/actions';
 export * from './core/effects';
