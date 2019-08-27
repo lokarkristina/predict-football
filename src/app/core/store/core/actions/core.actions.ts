@@ -1,23 +1,51 @@
 import { Action } from '@ngrx/store';
 
-// User login
-export const USER_LOGIN = '[Core] User Login';
-export const USER_LOGIN_FAIL = '[Core] User Login Fail';
-export const USER_LOGIN_SUCCESS = '[Core] User Login Success';
+import { User } from 'src/app/core/models/user.model';
 
-export class UserLogin implements Action {
-  readonly type = USER_LOGIN;
+// Fetch Users
+export const FETCH_USERS = '[Core] Fetch Users';
+export const FETCH_USERS_FAIL = '[Core] Fetch Users Fail';
+export const FETCH_USERS_SUCCESS = '[Core] Fetch Users Success';
+
+export class FetchUsers implements Action {
+  readonly type = FETCH_USERS;
 }
 
-export class UserLoginFail implements Action {
-  readonly type = USER_LOGIN_FAIL;
+export class FetchUsersFail implements Action {
+  readonly type = FETCH_USERS_FAIL;
   constructor(public payload: any) {}
 }
 
-export class UserLoginSuccess implements Action {
-  readonly type = USER_LOGIN_SUCCESS;
-  constructor(public payload: boolean) {}
+export class FetchUsersSuccess implements Action {
+  readonly type = FETCH_USERS_SUCCESS;
+  constructor(public payload: User[]) {}
+}
+
+// Fetch User
+export const FETCH_USER = '[Core] Fetch User';
+export const FETCH_USER_FAIL = '[Core] Fetch User Fail';
+export const FETCH_USER_SUCCESS = '[Core] Fetch User Success';
+
+export class FetchUser implements Action {
+  readonly type = FETCH_USER;
+  constructor(public payload: number) {}
+}
+
+export class FetchUserFail implements Action {
+  readonly type = FETCH_USER_FAIL;
+  constructor(public payload: any) {}
+}
+
+export class FetchUserSuccess implements Action {
+  readonly type = FETCH_USER_SUCCESS;
+  constructor(public payload: User) {}
 }
 
 // All actions
-export type UserActions = UserLogin | UserLoginFail | UserLoginSuccess;
+export type CoreActions =
+  | FetchUsers
+  | FetchUsersFail
+  | FetchUsersSuccess
+  | FetchUser
+  | FetchUserFail
+  | FetchUserSuccess;

@@ -8,13 +8,19 @@ import { User } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  url = 'http://localhost:3000/users';
+  urlUsers = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 
-  getUser(): Observable<User> {
+  fetchUsers(): Observable<User[]> {
     return this.http
-      .get<User>(this.url)
+      .get<User[]>(this.urlUsers)
+      .pipe(catchError((error: any) => Observable.throw(error.json())));
+  }
+
+  fetchUser(id: number) {
+    return this.http
+      .get<User>(`${this.urlUsers}/${id}`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 }
