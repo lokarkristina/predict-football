@@ -18,9 +18,8 @@ export class GameResolver implements Resolve<boolean> {
   constructor(private store: Store<Game[]>) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    this.store.dispatch(new fromStore.FetchGames());
-
     this.store.dispatch(new fromStore.FetchCountries());
+    this.store.dispatch(new fromStore.FetchGames());
 
     return true;
   }

@@ -15,11 +15,11 @@ export class GameSingleResolver implements Resolve<boolean> {
   constructor(private store: Store<Game>) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    const gameId = route.params.id;
-    this.store.dispatch(new fromStore.FetchGame(gameId));
-
     // Countries should be already in?
     this.store.dispatch(new fromStore.FetchCountries());
+
+    const gameId = route.params.id;
+    this.store.dispatch(new fromStore.FetchGame(gameId));
 
     return true;
   }

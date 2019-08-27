@@ -14,10 +14,9 @@ import * as fromStore from '../../store';
 })
 export class GameSingleComponent implements OnInit {
   game: Game;
-  id: number;
-
   homeCountry: Country;
   awayCountry: Country;
+  id: number;
 
   constructor(
     private store: Store<fromStore.GameState>,
@@ -36,11 +35,11 @@ export class GameSingleComponent implements OnInit {
 
       this.store
         .select(fromStore.getSelectedCountry(this.game.homeCountryId - 1))
-        .subscribe(country => country && (this.homeCountry = country));
+        .subscribe(country => (this.homeCountry = country));
 
       this.store
         .select(fromStore.getSelectedCountry(this.game.awayCountryId - 1))
-        .subscribe(country => country && (this.awayCountry = country));
+        .subscribe(country => (this.awayCountry = country));
     });
   }
 }
