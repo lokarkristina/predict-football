@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Game } from '../../models/game.model';
+import { Store } from '@ngrx/store';
 
 import * as fromStore from '../../store';
-import { Store } from '@ngrx/store';
+
+import { Game } from '../../models/game.model';
 
 @Component({
   selector: 'app-game-details',
@@ -41,8 +42,8 @@ export class GameDetailsComponent implements OnInit {
   constructor(private store: Store<fromStore.GameState>) {}
 
   ngOnInit() {
-    const homeCountryId = this.game.homeCountryId;
-    const awayCountryId = this.game.awayCountryId;
+    const homeCountryId = this.game.playerHomeId;
+    const awayCountryId = this.game.playerAwayId;
 
     if (homeCountryId && awayCountryId) {
       this.store

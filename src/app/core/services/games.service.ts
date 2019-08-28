@@ -9,20 +9,20 @@ import { Country } from 'src/app/games/models/country.model';
 
 @Injectable({ providedIn: 'root' })
 export class GamesService {
-  urlPredictions = 'http://localhost:3000/predictions';
+  urlGames = 'http://localhost:3000/games';
   urlCountries = 'http://localhost:3000/countries';
 
   constructor(private http: HttpClient) {}
 
   fetchGames(): Observable<Game[]> {
     return this.http
-      .get<Game[]>(this.urlPredictions)
+      .get<Game[]>(this.urlGames)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
   fetchGame(id: number): Observable<Game> {
     return this.http
-      .get<Game>(`${this.urlPredictions}/${id}`)
+      .get<Game>(`${this.urlGames}/${id}`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
@@ -35,13 +35,6 @@ export class GamesService {
   getCountries(): Observable<Country[]> {
     return this.http
       .get<Country[]>(`${this.urlCountries}`)
-      .pipe(catchError((error: any) => Observable.throw(error.json())));
-  }
-
-  // Add = update v resnici, ker updatea Game s tem ko mu doda še score
-  addPrediction(payload: Game): Observable<Game> {
-    return this.http
-      .put<Game>(`${this.urlPredictions}/${payload.id}`, payload)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 }

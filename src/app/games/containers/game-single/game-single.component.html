@@ -35,7 +35,6 @@
         <span class="spacer-name">Away</span>
       </div>
     </div>
-    {{ userLoggedIn ? userLoggedIn : 'false' }}
     <div class="game__predictions" *ngIf="userLoggedIn; else login">
       <h4>My prediciton</h4>
       <app-prediction-add
