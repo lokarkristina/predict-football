@@ -4,7 +4,7 @@
   </div>
   <form
     [formGroup]="loginForm"
-    (ngSubmit)="onSubmit(email, password)"
+    (ngSubmit)="onSubmit()"
     *ngIf="!userLoggedIn; else logout"
   >
     <div class="form-group">
@@ -15,7 +15,6 @@
         name="email"
         class="form-control"
         formControlName="email"
-        #email
       />
     </div>
     <div class="form-group">
@@ -26,7 +25,6 @@
         name="password"
         class="form-control"
         formControlName="password"
-        #password
       />
     </div>
     <div class="form-group btn-wrapper">

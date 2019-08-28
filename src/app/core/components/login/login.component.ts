@@ -28,10 +28,9 @@ export class LoginComponent implements OnInit {
     this.buildForm();
   }
 
-  onSubmit(email, password) {
-    // TODO Check types
-    email = email.value;
-    password = password.value;
+  onSubmit() {
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
 
     let allUsers: User[];
 
@@ -53,8 +52,8 @@ export class LoginComponent implements OnInit {
           this.store.dispatch(new fromStore.LoginUser(user.id));
 
           // set to localStore
-          // ! TODO Don't save the password
-          localStorage.setItem('userData', JSON.stringify(user));
+          const localUser = { id: user.id, email: user.email };
+          localStorage.setItem('userData', JSON.stringify(localUser));
           break;
         } else {
           this.message = 'Wrong password!';
