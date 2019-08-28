@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Store } from '@ngrx/store';
 
-import { Game } from '../../models/game.model';
-import { Country } from '../../models/country.model';
-
 import * as fromStore from '../../store';
 import * as fromCoreStore from '../../../core/store';
+
+import { Game } from '../../models/game.model';
+import { Country } from '../../models/country.model';
 
 @Component({
   selector: 'app-game-single',
@@ -42,11 +42,11 @@ export class GameSingleComponent implements OnInit {
       }
 
       this.store
-        .select(fromStore.getSelectedCountry(this.game.homeCountryId - 1))
+        .select(fromStore.getSelectedCountry(this.game.playerHomeId - 1))
         .subscribe(country => (this.homeCountry = country));
 
       this.store
-        .select(fromStore.getSelectedCountry(this.game.awayCountryId - 1))
+        .select(fromStore.getSelectedCountry(this.game.playerAwayId - 1))
         .subscribe(country => (this.awayCountry = country));
     });
   }

@@ -1,8 +1,71 @@
 {
+  "games": [
+    {
+      "id": 1,
+      "playerHomeId": 1,
+      "playerAwayId": 23
+    },
+    {
+      "id": 2,
+      "playerHomeId": 2,
+      "playerAwayId": 22
+    },
+    {
+      "id": 3,
+      "playerHomeId": 3,
+      "playerAwayId": 13
+    },
+    {
+      "id": 4,
+      "playerHomeId": 4,
+      "playerAwayId": 24
+    },
+    {
+      "id": 5,
+      "playerHomeId": 5,
+      "playerAwayId": 25
+    },
+    {
+      "id": 6,
+      "playerHomeId": 6,
+      "playerAwayId": 26
+    },
+    {
+      "id": 7,
+      "playerHomeId": 21,
+      "playerAwayId": 11
+    },
+    {
+      "id": 8,
+      "playerHomeId": 12,
+      "playerAwayId": 10
+    },
+    {
+      "id": 9,
+      "playerHomeId": 10,
+      "playerAwayId": 15
+    },
+    {
+      "id": 10,
+      "playerHomeId": 9,
+      "playerAwayId": 26
+    },
+    {
+      "id": 11,
+      "playerHomeId": 27,
+      "playerAwayId": 25
+    },
+    {
+      "id": 12,
+      "playerHomeId": 24,
+      "playerAwayId": 8
+    }
+  ],
   "predictions": [
     {
       "id": 1,
       "userId": 1,
+      "gameId": 1,
       "homeCountryId": 1,
       "awayCountryId": 27,
       "homeScore": 6,
@@ -11,6 +74,7 @@
     {
       "id": 2,
       "userId": 1,
+      "gameId": 2,
       "homeCountryId": 5,
       "awayCountryId": 8,
       "homeScore": 3,
@@ -19,6 +83,7 @@
     {
       "id": 3,
       "userId": 1,
+      "gameId": 3,
       "homeCountryId": 1,
       "awayCountryId": 20,
       "homeScore": 7,
@@ -26,7 +91,8 @@
     },
     {
       "id": 4,
-      "userId": 1,
+      "userId": 2,
+      "gameId": 1,
       "homeCountryId": 5,
       "awayCountryId": 8,
       "homeScore": 8,
@@ -34,7 +100,8 @@
     },
     {
       "id": 5,
-      "userId": 1,
+      "userId": 2,
+      "gameId": 1,
       "homeCountryId": 15,
       "awayCountryId": 18,
       "homeScore": 1,
@@ -42,7 +109,8 @@
     },
     {
       "id": 6,
-      "userId": 1,
+      "userId": 3,
+      "gameId": 1,
       "homeCountryId": 1,
       "awayCountryId": 12,
       "homeScore": 6,
@@ -138,7 +206,7 @@
     {
       "id": 12,
       "name": "Estonia",
-      "flagImg": "https://www.countryflags.io/es/flat/64.png"
+      "flagImg": "https://www.countryflags.io/ee/flat/64.png"
     },
     {
       "id": 13,
@@ -193,7 +261,7 @@
     {
       "id": 23,
       "name": "Slovenia",
-      "flagImg": "https://www.countryflags.io/sl/flat/64.png"
+      "flagImg": "https://www.countryflags.io/si/flat/64.png"
     },
     {
       "id": 24,

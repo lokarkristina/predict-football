@@ -10,6 +10,7 @@ import { effectsGames } from './store';
 // reducers
 import { GamesReducer } from '../games/store/games/reducers/games.reducer';
 import { CountriesReducer } from '../games/store/countries/reducers/countries.reducer';
+import { PredictionsReducer } from '../games/store/predictions/reducers/predictions.reducers';
 
 import { SharedModule } from '../shared/shared.module';
 import { GamesRoutingModule } from './routing/games-routing.module';
@@ -36,6 +37,7 @@ import { PredictionAddComponent } from './components/prediction-add/prediction-a
     ReactiveFormsModule,
     StoreModule.forFeature('games', GamesReducer),
     StoreModule.forFeature('countries', CountriesReducer),
+    StoreModule.forFeature('predictions', PredictionsReducer),
     EffectsModule.forFeature(effectsGames),
   ],
   exports: [GamesComponent],
