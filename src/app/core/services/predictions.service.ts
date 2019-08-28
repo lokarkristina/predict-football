@@ -18,6 +18,12 @@ export class PredictionsService {
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
+  updatePrediction(payload: Prediction): Observable<Prediction> {
+    return this.http
+      .put<Prediction>(`${this.urlPredictions}/${payload.id}`, payload)
+      .pipe(catchError((error: any) => Observable.throw(error.json())));
+  }
+
   fetchPredictions(): Observable<Prediction[]> {
     return this.http
       .get<Prediction[]>(this.urlPredictions)

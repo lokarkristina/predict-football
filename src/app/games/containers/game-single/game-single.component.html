@@ -38,6 +38,7 @@
     <div class="game__predictions" *ngIf="userLoggedIn; else login">
       <h4>My prediciton</h4>
       <app-prediction-add
+        [predId]="predId"
         [gameId]="game.id"
         [userId]="userId"
         [playerHomeId]="game.playerHomeId"

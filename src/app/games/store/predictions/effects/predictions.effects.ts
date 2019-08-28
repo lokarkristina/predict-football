@@ -30,6 +30,23 @@ export class PredictionsEffects {
   );
 
   @Effect()
+  updatePrediction$ = this.actions$.pipe(
+    ofType(PredictionActions.UPDATE_PREDICTION),
+    map((action: PredictionActions.UpdatePrediction) => action.payload),
+    switchMap(prediction => {
+      return this.predictionsService.updatePrediction(prediction).pipe(
+        map(
+          prediction =>
+            new PredictionActions.UpdatePredictionSuccess(prediction)
+        ),
+        catchError(error =>
+          of(new PredictionActions.UpdatePredictionFail(error))
+        )
+      );
+    })
+  );
+
+  @Effect()
   fetchPredictions$ = this.actions$.pipe(
     ofType(PredictionActions.FETCH_PREDICTIONS),
     switchMap(() => {

@@ -17,14 +17,17 @@ export class PredictionAddComponent implements OnInit {
   @Input() playerAwayId: number;
   @Input() playerHomeScore: number;
   @Input() playerAwayScore: number;
+  @Input() predId: number;
 
   predictionForm: FormGroup;
   message: string;
+  editMode = false;
 
   constructor(private store: Store<fromStore.GameState>) {}
 
   ngOnInit() {
-    this.buildForm(this.playerHomeScore, this.playerAwayScore);
+    this.predId != null && (this.editMode = true);
+    this.buildForm(this.predId, this.playerHomeScore, this.playerAwayScore);
   }
 
   onSubmit() {
@@ -41,12 +44,18 @@ export class PredictionAddComponent implements OnInit {
     newPrediction.playerHomeId = this.playerHomeId;
     newPrediction.playerAwayId = this.playerAwayId;
 
-    // Add new prediction
-    this.store.dispatch(new fromStore.AddPrediction(newPrediction));
+    // Add new / update prediction
+    if (this.editMode) {
+      newPrediction.id = this.predId;
+      this.store.dispatch(new fromStore.UpdatePrediction(newPrediction));
+    } else {
+      this.store.dispatch(new fromStore.AddPrediction(newPrediction));
+    }
   }
 
-  private buildForm(homeScore: number, awayScore: number) {
+  private buildForm(id: number, homeScore: number, awayScore: number) {
     this.predictionForm = new FormGroup({
+      id: new FormControl(id),
       homeScore: new FormControl(homeScore),
       awayScore: new FormControl(awayScore),
     });

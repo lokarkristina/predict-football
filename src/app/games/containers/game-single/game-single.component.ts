@@ -25,6 +25,7 @@ export class GameSingleComponent implements OnInit {
   id: number;
   userId: number;
   userLoggedIn: boolean;
+  predId: number;
 
   constructor(
     private store: Store<fromStore.GameState>,
@@ -62,6 +63,7 @@ export class GameSingleComponent implements OnInit {
             if (prediction.userId == this.userId) {
               this.playerHomeScore = prediction.homeScore;
               this.playerAwayScore = prediction.awayScore;
+              this.predId = prediction.id;
             }
           });
         });

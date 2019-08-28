@@ -61,6 +61,26 @@ export class FetchPredictionSuccess implements Action {
   constructor(public payload: Prediction) {}
 }
 
+// Update Prediction
+export const UPDATE_PREDICTION = '[Game] Update perdiction';
+export const UPDATE_PREDICTION_FAIL = '[Game] Update perdiction Fail';
+export const UPDATE_PREDICTION_SUCCESS = '[Game] Update perdiction Success';
+
+export class UpdatePrediction implements Action {
+  readonly type = UPDATE_PREDICTION;
+  constructor(public payload: Prediction) {}
+}
+
+export class UpdatePredictionFail implements Action {
+  readonly type = UPDATE_PREDICTION_FAIL;
+  constructor(public payload: any) {}
+}
+
+export class UpdatePredictionSuccess implements Action {
+  readonly type = UPDATE_PREDICTION_SUCCESS;
+  constructor(public payload: Prediction) {}
+}
+
 export type PredictioinsActions =
   | AddPrediction
   | AddPredictionFail
@@ -70,4 +90,7 @@ export type PredictioinsActions =
   | FetchPredictionsSuccess
   | FetchPrediction
   | FetchPredictionFail
-  | FetchPredictionSuccess;
+  | FetchPredictionSuccess
+  | UpdatePrediction
+  | UpdatePredictionFail
+  | UpdatePredictionSuccess;
