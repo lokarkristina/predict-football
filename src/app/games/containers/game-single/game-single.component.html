@@ -35,7 +35,8 @@
         <span class="spacer-name">Away</span>
       </div>
     </div>
-    <div class="game__predictions">
+    {{ userLoggedIn ? userLoggedIn : 'false' }}
+    <div class="game__predictions" *ngIf="userLoggedIn; else login">
       <h4>My prediciton</h4>
       <app-prediction-add
         [gameId]="game.id"
@@ -45,6 +46,12 @@
         [awayScore]="game.awayScore"
       ></app-prediction-add>
     </div>
+    <ng-template #login>
+      <h4>My prediciton</h4>
+      <p>In order to add a prediction you must log in!</p>
+      <br />
+      <a [routerLink]="['/login']">To login link</a>
+    </ng-template>
   </div>
   <div class="game-single__footer">
     <div class="footer__right">

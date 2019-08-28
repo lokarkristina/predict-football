@@ -18,8 +18,7 @@ export class PredictionAddComponent implements OnInit {
   @Input() awayScore: number;
 
   predictionForm: FormGroup;
-  // TODO: Make it dynamic
-  userId = 1;
+  userId: number;
   message: string;
 
   constructor(private store: Store<fromStore.GameState>) {}

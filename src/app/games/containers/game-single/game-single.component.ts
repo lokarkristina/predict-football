@@ -7,6 +7,8 @@ import { Game } from '../../models/game.model';
 import { Country } from '../../models/country.model';
 
 import * as fromStore from '../../store';
+import * as fromCoreStore from '../../../core/store';
+
 @Component({
   selector: 'app-game-single',
   templateUrl: './game-single.component.html',
@@ -17,6 +19,8 @@ export class GameSingleComponent implements OnInit {
   homeCountry: Country;
   awayCountry: Country;
   id: number;
+  userId: number;
+  userLoggedIn: boolean;
 
   constructor(
     private store: Store<fromStore.GameState>,
@@ -24,6 +28,10 @@ export class GameSingleComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.store.select(fromCoreStore.getLoggedInUser).subscribe(user => {
+      user && ((this.userId = user.id), (this.userLoggedIn = true));
+    });
+
     this.id = +this.route.snapshot.paramMap.get('id');
 
     this.store.select(fromStore.getSelectedGame(this.id)).subscribe(game => {
