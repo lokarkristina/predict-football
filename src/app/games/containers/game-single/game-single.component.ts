@@ -8,6 +8,7 @@ import * as fromCoreStore from '../../../core/store';
 
 import { Game } from '../../models/game.model';
 import { Country } from '../../models/country.model';
+import { Prediction } from '../../models/prediction.model';
 
 @Component({
   selector: 'app-game-single',
@@ -16,8 +17,11 @@ import { Country } from '../../models/country.model';
 })
 export class GameSingleComponent implements OnInit {
   game: Game;
-  homeCountry: Country;
-  awayCountry: Country;
+  playerHome: Country;
+  playerAway: Country;
+
+  playerHomeScore: number;
+  playerAwayScore: number;
   id: number;
   userId: number;
   userLoggedIn: boolean;
@@ -41,13 +45,26 @@ export class GameSingleComponent implements OnInit {
         return;
       }
 
+      // Get home and away country name
       this.store
         .select(fromStore.getSelectedCountry(this.game.playerHomeId - 1))
-        .subscribe(country => (this.homeCountry = country));
+        .subscribe(country => (this.playerHome = country));
 
       this.store
         .select(fromStore.getSelectedCountry(this.game.playerAwayId - 1))
-        .subscribe(country => (this.awayCountry = country));
+        .subscribe(country => (this.playerAway = country));
+
+      // Get home and away player scores
+      this.store
+        .select(fromStore.getGamePredictions(this.game.id))
+        .subscribe(res => {
+          res.map((prediction: Prediction) => {
+            if (prediction.userId == this.userId) {
+              this.playerHomeScore = prediction.homeScore;
+              this.playerAwayScore = prediction.awayScore;
+            }
+          });
+        });
     });
   }
 }

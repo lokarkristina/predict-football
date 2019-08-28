@@ -1,8 +1,9 @@
 export interface Prediction {
   id: number;
   userId: number;
-  homeCountryId: number;
-  awayCountryId: number;
+  gameId: number;
+  playerHomeId: number;
+  playerAwayId: number;
   homeScore?: number;
   awayScore?: number;
 }

@@ -28,4 +28,37 @@ export class PredictionsEffects {
       );
     })
   );
+
+  @Effect()
+  fetchPredictions$ = this.actions$.pipe(
+    ofType(PredictionActions.FETCH_PREDICTIONS),
+    switchMap(() => {
+      return this.predictionsService
+        .fetchPredictions()
+        .pipe(
+          map(
+            predictions =>
+              new PredictionActions.FetchPredictionsSuccess(predictions),
+            catchError(error =>
+              of(new PredictionActions.FetchPredictionsFail(error))
+            )
+          )
+        );
+    })
+  );
+
+  @Effect()
+  fetchPrediction$ = this.actions$.pipe(
+    ofType(PredictionActions.FETCH_PREDICTION),
+    switchMap(id => {
+      return this.predictionsService.fetchPrediction(id).pipe(
+        map(
+          prediction => new PredictionActions.FetchPredictionSuccess(prediction)
+        ),
+        catchError(error =>
+          of(new PredictionActions.FetchPredictionFail(error))
+        )
+      );
+    })
+  );
 }

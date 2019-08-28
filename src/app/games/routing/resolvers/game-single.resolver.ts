@@ -17,6 +17,7 @@ export class GameSingleResolver implements Resolve<boolean> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     // Countries should be already in?
     this.store.dispatch(new fromStore.FetchCountries());
+    this.store.dispatch(new fromStore.FetchPredictions());
 
     const gameId = route.params.id;
     this.store.dispatch(new fromStore.FetchGame(gameId));

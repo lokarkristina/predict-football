@@ -32,6 +32,54 @@ export function PredictionsReducer(
       };
     }
 
+    case fromPredictions.FETCH_PREDICTIONS: {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
+
+    case fromPredictions.FETCH_PREDICTIONS_FAIL: {
+      return {
+        ...state,
+        loading: false,
+        loaded: false,
+      };
+    }
+
+    case fromPredictions.FETCH_PREDICTIONS_SUCCESS: {
+      const predictions = action.payload;
+      const entities = predictions.reduce(
+        (entities: { [id: number]: Prediction }, prediction: Prediction) => {
+          return {
+            ...entities,
+            [prediction.id]: prediction,
+          };
+        },
+        { ...state.entities }
+      );
+
+      return {
+        ...state,
+        loading: false,
+        loaded: true,
+        entities,
+      };
+    }
+
+    case fromPredictions.FETCH_PREDICTION_SUCCESS: {
+      const prediction = action.payload;
+      const entities = {
+        ...state.entities,
+        [prediction.id]: prediction,
+      };
+
+      return {
+        ...state,
+        entities,
+      };
+    }
+
     default:
       return state;
   }

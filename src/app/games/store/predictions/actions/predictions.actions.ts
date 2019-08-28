@@ -22,7 +22,52 @@ export class AddPredictionSuccess implements Action {
   constructor(public payload: Prediction) {}
 }
 
+// Fetch Predictions
+export const FETCH_PREDICTIONS = '[Games] Fetch Predictions';
+export const FETCH_PREDICTIONS_FAIL = '[Games] Fetch Predictions Fail';
+export const FETCH_PREDICTIONS_SUCCESS = '[Games] Fetch Predictions Success';
+
+export class FetchPredictions implements Action {
+  readonly type = FETCH_PREDICTIONS;
+}
+
+export class FetchPredictionsFail implements Action {
+  readonly type = FETCH_PREDICTIONS_FAIL;
+  constructor(public payload: any) {}
+}
+
+export class FetchPredictionsSuccess implements Action {
+  readonly type = FETCH_PREDICTIONS_SUCCESS;
+  constructor(public payload: Prediction[]) {}
+}
+
+// Fetch Prediction
+export const FETCH_PREDICTION = '[Games] Fetch Prediction';
+export const FETCH_PREDICTION_FAIL = '[Games] Fetch Prediction Fail';
+export const FETCH_PREDICTION_SUCCESS = '[Games] Fetch Prediction Success';
+
+export class FetchPrediction implements Action {
+  readonly type = FETCH_PREDICTION;
+  constructor(public payload: number) {}
+}
+
+export class FetchPredictionFail implements Action {
+  readonly type = FETCH_PREDICTION_FAIL;
+  constructor(public payload: any) {}
+}
+
+export class FetchPredictionSuccess implements Action {
+  readonly type = FETCH_PREDICTION_SUCCESS;
+  constructor(public payload: Prediction) {}
+}
+
 export type PredictioinsActions =
   | AddPrediction
   | AddPredictionFail
-  | AddPredictionSuccess;
+  | AddPredictionSuccess
+  | FetchPredictions
+  | FetchPredictionsFail
+  | FetchPredictionsSuccess
+  | FetchPrediction
+  | FetchPredictionFail
+  | FetchPredictionSuccess;

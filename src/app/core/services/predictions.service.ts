@@ -12,10 +12,21 @@ export class PredictionsService {
 
   constructor(private http: HttpClient) {}
 
-  // Add = update v resnici, ker updatea Game s tem ko mu doda še score
   addPrediction(payload: Prediction): Observable<Prediction> {
     return this.http
-      .put<Prediction>(`${this.urlPredictions}/${payload.id}`, payload)
+      .post<Prediction>(`${this.urlPredictions}`, payload)
+      .pipe(catchError((error: any) => Observable.throw(error.json())));
+  }
+
+  fetchPredictions(): Observable<Prediction[]> {
+    return this.http
+      .get<Prediction[]>(this.urlPredictions)
+      .pipe(catchError((error: any) => Observable.throw(error.json())));
+  }
+
+  fetchPrediction(id: number): Observable<Prediction> {
+    return this.http
+      .get<Prediction>(`${this.urlPredictions}/${id}`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 }

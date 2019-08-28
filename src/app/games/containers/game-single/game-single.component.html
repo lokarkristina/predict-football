@@ -9,13 +9,13 @@
     <div class="game__players-wrapper">
       <div class="game__playes-home">
         <div class="player-flag">
-          <span *ngIf="homeCountry" class="player-flag">
-            <img src="{{ homeCountry.flagImg }}" alt="" />
+          <span *ngIf="playerHome" class="player-flag">
+            <img src="{{ playerHome.flagImg }}" alt="" />
           </span>
         </div>
         <div class="player-name">
           <span class="game-player">
-            {{ homeCountry.name }}
+            {{ playerHome.name }}
           </span>
         </div>
         <span class="spacer-name">Home</span>
@@ -23,13 +23,13 @@
       <span class="spacer">:</span>
       <div class="game__playes-away">
         <div class="player-flag">
-          <span *ngIf="awayCountry" class="player-flag">
-            <img src="{{ awayCountry.flagImg }}" alt="" />
+          <span *ngIf="playerAway" class="player-flag">
+            <img src="{{ playerAway.flagImg }}" alt="" />
           </span>
         </div>
         <div class="player-name">
           <span class="game-player">
-            {{ awayCountry.name }}
+            {{ playerAway.name }}
           </span>
         </div>
         <span class="spacer-name">Away</span>
@@ -39,10 +39,11 @@
       <h4>My prediciton</h4>
       <app-prediction-add
         [gameId]="game.id"
-        [homeCountryId]="game.homeCountryId"
-        [awayCountryId]="game.awayCountryId"
-        [homeScore]="game.homeScore"
-        [awayScore]="game.awayScore"
+        [userId]="userId"
+        [playerHomeId]="game.playerHomeId"
+        [playerAwayId]="game.playerAwayId"
+        [playerHomeScore]="playerHomeScore"
+        [playerAwayScore]="playerAwayScore"
       ></app-prediction-add>
     </div>
     <ng-template #login>
