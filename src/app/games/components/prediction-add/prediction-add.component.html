@@ -25,5 +25,7 @@
       <label for="awayScore">Guest</label>
     </div>
   </div>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="submit" class="btn btn-success">
+    {{ editMode ? 'Edit prediction' : 'Add prediction' }}
+  </button>
 </form>

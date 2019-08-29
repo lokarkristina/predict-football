@@ -100,12 +100,12 @@
     },
     {
       "id": 5,
-      "userId": 2,
-      "gameId": 1,
-      "homeCountryId": 15,
-      "awayCountryId": 18,
       "homeScore": 1,
-      "awayScore": 1
+      "awayScore": 5,
+      "gameId": 1,
+      "userId": 2,
+      "playerHomeId": 1,
+      "playerAwayId": 23
     },
     {
       "id": 6,
@@ -115,6 +115,78 @@
       "awayCountryId": 12,
       "homeScore": 6,
       "awayScore": 2
+    },
+    {
+      "id": 7,
+      "homeScore": 8,
+      "awayScore": 8,
+      "gameId": 8,
+      "userId": 1,
+      "playerHomeId": 12,
+      "playerAwayId": 10
+    },
+    {
+      "id": 8,
+      "homeScore": 0,
+      "awayScore": 13,
+      "gameId": 9,
+      "userId": 1,
+      "playerHomeId": 10,
+      "playerAwayId": 15
+    },
+    {
+      "id": 9,
+      "homeScore": 2,
+      "awayScore": 4,
+      "gameId": 11,
+      "userId": 1,
+      "playerHomeId": 27,
+      "playerAwayId": 25
+    },
+    {
+      "id": 10,
+      "homeScore": 1,
+      "awayScore": 2,
+      "gameId": 8,
+      "userId": 2,
+      "playerHomeId": 12,
+      "playerAwayId": 10
+    },
+    {
+      "id": 11,
+      "homeScore": 3,
+      "awayScore": 0,
+      "gameId": 12,
+      "userId": 2,
+      "playerHomeId": 24,
+      "playerAwayId": 8
+    },
+    {
+      "id": 12,
+      "homeScore": 0,
+      "awayScore": 4,
+      "gameId": 2,
+      "userId": 2,
+      "playerHomeId": 2,
+      "playerAwayId": 22
+    },
+    {
+      "id": 13,
+      "homeScore": 0,
+      "awayScore": 5,
+      "gameId": 4,
+      "userId": 2,
+      "playerHomeId": 4,
+      "playerAwayId": 24
+    },
+    {
+      "id": 14,
+      "homeScore": 2,
+      "awayScore": 1,
+      "gameId": 5,
+      "userId": 2,
+      "playerHomeId": 5,
+      "playerAwayId": 25
     }
   ],
   "users": [

@@ -50,6 +50,7 @@ export class PredictionAddComponent implements OnInit {
       this.store.dispatch(new fromStore.UpdatePrediction(newPrediction));
     } else {
       this.store.dispatch(new fromStore.AddPrediction(newPrediction));
+      this.editMode = true;
     }
   }
 
