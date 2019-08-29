@@ -57,7 +57,7 @@
   <div class="game-single__footer">
     <div class="footer__right">
       <h4>Predictions by other users</h4>
-      <div *ngIf="predictions$; else noPredictions">
+      <div *ngIf="predictions$.length > 0; else noPredictions">
         <app-predictions
           *ngFor="let prediction of predictions$"
           [prediction]="prediction"

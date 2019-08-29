@@ -1,4 +1,4 @@
-<div class="game-details">
+<div class="game-details" [class.prediction-added]="predId">
   <a [routerLink]="['/games', game.id]">
     <div class="game__number">
       <h3>Game #{{ game.id }}</h3>

@@ -160,6 +160,24 @@
       "userId": 2,
       "playerHomeId": 27,
       "playerAwayId": 25
+    },
+    {
+      "id": 12,
+      "homeScore": 3,
+      "awayScore": 5,
+      "gameId": 3,
+      "userId": 2,
+      "playerHomeId": 3,
+      "playerAwayId": 13
+    },
+    {
+      "id": 13,
+      "homeScore": 2,
+      "awayScore": 2,
+      "gameId": 4,
+      "userId": 1,
+      "playerHomeId": 4,
+      "playerAwayId": 24
     }
   ],
   "users": [
