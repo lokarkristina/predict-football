@@ -1,0 +1,17 @@
+<div class="prediction-single" *ngIf="prediction">
+  <div class="prediction__number">
+    <h5>
+      #{{ prediction.id }}<br />
+      <span>by user #{{ prediction.userId }}</span>
+    </h5>
+  </div>
+  <div class="prediction__players-wrapper">
+    <div class="prediction__playes-home">
+      {{ prediction.homeScore }}
+    </div>
+    <span>:</span>
+    <div class="prediction__playes-away">
+      {{ prediction.awayScore }}
+    </div>
+  </div>
+</div>

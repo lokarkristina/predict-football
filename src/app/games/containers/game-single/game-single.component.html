@@ -57,6 +57,15 @@
   <div class="game-single__footer">
     <div class="footer__right">
       <h4>Predictions by other users</h4>
+      <div *ngIf="predictions$; else noPredictions">
+        <app-predictions
+          *ngFor="let prediction of predictions$"
+          [prediction]="prediction"
+        ></app-predictions>
+      </div>
+      <ng-template #noPredictions>
+        <p>Other users haven't added the predictions yet.</p>
+      </ng-template>
     </div>
   </div>
 </div>

@@ -23,6 +23,7 @@ import { GamesComponent } from './containers/games-container/games.component';
 import { GameSingleComponent } from './containers/game-single/game-single.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { PredictionAddComponent } from './components/prediction-add/prediction-add.component';
+import { PredictionsComponent } from './components/predictions/predictions.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PredictionAddComponent } from './components/prediction-add/prediction-a
     GameSingleComponent,
     GameDetailsComponent,
     PredictionAddComponent,
+    PredictionsComponent,
   ],
   imports: [
     SharedModule,

@@ -1,0 +1,52 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/breakpoints';
+
+.prediction {
+  &-single {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px dashed $colorAlto;
+
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+  &__number {
+    margin-right: 20px;
+    color: $colorMineShaft-05;
+
+    h6 {
+      line-height: 2;
+    }
+
+    span {
+      color: $colorMineShaft;
+      font-size: 1rem;
+      letter-spacing: $letterSpacing-large;
+    }
+  }
+
+  &__players-wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.5fr 20px 0.5fr 0.5fr;
+    align-items: center;
+
+    @include sm {
+      grid-template-columns: 0.5fr 20px 0.5fr;
+    }
+
+    > div {
+      margin: 0 20px;
+    }
+
+    > * {
+      text-align: center;
+    }
+  }
+}

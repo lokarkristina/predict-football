@@ -19,6 +19,7 @@ export class GameSingleComponent implements OnInit {
   game: Game;
   playerHome: Country;
   playerAway: Country;
+  predictions$: Prediction[];
 
   playerHomeScore: number;
   playerAwayScore: number;
@@ -59,11 +60,15 @@ export class GameSingleComponent implements OnInit {
       this.store
         .select(fromStore.getGamePredictions(this.game.id))
         .subscribe(res => {
+          this.predictions$ = [];
+
           res.map((prediction: Prediction) => {
             if (prediction.userId == this.userId) {
               this.playerHomeScore = prediction.homeScore;
               this.playerAwayScore = prediction.awayScore;
               this.predId = prediction.id;
+            } else {
+              this.predictions$.push(prediction);
             }
           });
         });
