@@ -9,8 +9,8 @@ import { Country } from 'src/app/games/models/country.model';
 
 @Injectable({ providedIn: 'root' })
 export class GamesService {
-  urlGames = 'http://localhost:3000/games';
-  urlCountries = 'http://localhost:3000/countries';
+  urlGames = 'http://localhost:3333/games';
+  urlCountries = 'http://localhost:3333/countries';
 
   constructor(private http: HttpClient) {}
 

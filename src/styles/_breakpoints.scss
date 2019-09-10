@@ -1,5 +1,11 @@
 @import './variables';
 
+@mixin lg-up {
+  @media only screen and (max-width: #{$lg-up-width}) {
+    @content;
+  }
+}
+
 @mixin md {
   @media only screen and (max-width: #{$md-width}) {
     @content;

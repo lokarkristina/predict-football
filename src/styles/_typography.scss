@@ -22,29 +22,53 @@ h6 {
 .h1,
 h1 {
   font-size: 2.5rem;
+
+  @include lg-up {
+		font-size: 2.8rem;
+	}
 }
 
 .h2,
 h2 {
   font-size: 2rem;
+
+  @include lg-up {
+		font-size: 2.3rem;
+	}
 }
 
 .h3,
 h3 {
   font-size: 1.75rem;
+
+  @include lg-up {
+		font-size: 2.05rem;
+	}
 }
 
 .h4,
 h4 {
   font-size: 1.5rem;
+
+  @include lg-up {
+		font-size: 1.8rem;
+	}
 }
 
 .h5,
 h5 {
   font-size: 1.25rem;
+
+  @include lg-up {
+		font-size: 1.55rem;
+	}
 }
 
 .h6,
 h6 {
   font-size: 1rem;
+
+  @include lg-up {
+		font-size: 1.3rem;
+	}
 }

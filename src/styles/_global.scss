@@ -1,4 +1,5 @@
 @import './variables';
+@import './breakpoints';
 
 * {
   box-sizing: border-box;
@@ -20,6 +21,10 @@ body {
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 	-moz-osx-font-smoothing: grayscale !important;
+
+	@include lg-up {
+		font-size: 1.8rem;
+	}
 }
 
 main {

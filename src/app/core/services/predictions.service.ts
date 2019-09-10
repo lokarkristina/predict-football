@@ -8,7 +8,7 @@ import { Prediction } from 'src/app/games/models/prediction.model';
 
 @Injectable({ providedIn: 'root' })
 export class PredictionsService {
-  urlPredictions = 'http://localhost:3000/predictions';
+  urlPredictions = 'http://localhost:3333/predictions';
 
   constructor(private http: HttpClient) {}
 
