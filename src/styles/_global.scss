@@ -53,3 +53,19 @@ img {
 	max-width: 100%;
 	width: 100%;
 }
+
+.message {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 15px;
+	border: 1px solid $colorAlto;
+	border-radius: $borderRadius-default;
+	margin: 20px 0;
+	color: $colorMineShaft;
+
+	&-info {
+		border-color: $colorBlueberry;
+		color: $colorBlueberry;
+	}
+}

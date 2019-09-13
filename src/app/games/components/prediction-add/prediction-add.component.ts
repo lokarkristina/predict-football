@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Store } from '@ngrx/store';
 
@@ -57,8 +57,8 @@ export class PredictionAddComponent implements OnInit {
   private buildForm(id: number, homeScore: number, awayScore: number) {
     this.predictionForm = new FormGroup({
       id: new FormControl(id),
-      homeScore: new FormControl(homeScore),
-      awayScore: new FormControl(awayScore),
+      homeScore: new FormControl(homeScore, Validators.pattern('^[0-9]*$')),
+      awayScore: new FormControl(awayScore, Validators.pattern('^[0-9]*$')),
     });
   }
 }
