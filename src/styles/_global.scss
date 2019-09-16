@@ -40,6 +40,7 @@ a {
 	color: $colorBlack;
 	text-decoration: none;
 	transition: ease 0.3s;
+	cursor: pointer;
 
 	&:focus,
 	&:hover {
@@ -55,7 +56,7 @@ img {
 }
 
 .message {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	padding: 10px 15px;
@@ -64,8 +65,31 @@ img {
 	margin: 20px 0;
 	color: $colorMineShaft;
 
+	&__wrapper-flex {
+		display: flex;
+
+		&--center {
+			justify-content: center;
+		}
+
+		&--right {
+			justify-content: flex-end;
+		}
+	}
+
+	&--inline {
+		padding: 10px 0;
+		border: 0;
+		margin: 0;
+	}
+
 	&-info {
 		border-color: $colorBlueberry;
 		color: $colorBlueberry;
+	}
+
+	&-error {
+		border-color: $colorChesnutRose;
+		color: $colorChesnutRose;
 	}
 }

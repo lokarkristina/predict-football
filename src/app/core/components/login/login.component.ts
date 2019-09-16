@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import * as fromStore from '../../store';
 
 import { User } from '../../models/user.model';
+import { Message } from 'src/app/shared/models/message.model';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ import { User } from '../../models/user.model';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   user: User;
-  message: string;
+  messageText: Message['text'];
+  messageType: Message['type'];
   userLoggedIn: boolean;
 
   constructor(private store: Store<fromStore.UserState>) {}
@@ -45,7 +47,8 @@ export class LoginComponent implements OnInit {
         const user = allUsers[key];
 
         if (user.password === password) {
-          this.message = 'Login SUCCESSFUL!';
+          this.messageText = 'Login SUCCESSFUL!';
+          this.messageType = 'success';
           this.userLoggedIn = true;
 
           // set to store
@@ -56,11 +59,13 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userData', JSON.stringify(localUser));
           break;
         } else {
-          this.message = 'Wrong password!';
+          this.messageText = 'Wrong password!';
+          this.messageType = 'error';
           break;
         }
       } else {
-        this.message = 'Login unsuccessful! Email doesn\'t exists.';
+        this.messageText = 'Login unsuccessful! Email doesn\'t exists.';
+        this.messageType = 'error';
       }
     }
 

@@ -17,9 +17,40 @@ form {
     line-height: 1.7;
     font-size: 1.3rem;
     text-transform: none;
+  }
+}
 
-    + input {
-      margin-bottom: 25px;
+.logout-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 780px;
+  margin: 20px auto;
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    > div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    p {
+      margin: 0 0 25px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
     }
   }
 }
