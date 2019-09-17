@@ -3,7 +3,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Store } from '@ngrx/store';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import * as fromStore from '../../store';
+
+import { Message } from 'src/app/shared/models/message.model';
 
 @Component({
   selector: 'app-prediction-add',
@@ -20,10 +24,13 @@ export class PredictionAddComponent implements OnInit {
   @Input() predId: number;
 
   predictionForm: FormGroup;
-  message: string;
+  messageText: Message['text'];
   editMode = false;
 
-  constructor(private store: Store<fromStore.GameState>) {}
+  constructor(
+    private store: Store<fromStore.GameState>,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.predId != null && (this.editMode = true);
@@ -48,9 +55,17 @@ export class PredictionAddComponent implements OnInit {
     if (this.editMode) {
       newPrediction.id = this.predId;
       this.store.dispatch(new fromStore.UpdatePrediction(newPrediction));
+
+      this.snackBar.open('Predictions successfully updated.', 'OK!', {
+        duration: 3000,
+      });
     } else {
       this.store.dispatch(new fromStore.AddPrediction(newPrediction));
       this.editMode = true;
+
+      this.snackBar.open('Predictions successfully added.', 'OK!', {
+        duration: 3000,
+      });
     }
   }
 

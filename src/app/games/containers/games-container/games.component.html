@@ -1,9 +1,14 @@
 <div>
   <h1>All games</h1>
   <hr />
-  <div class="wrapper">
-    <div *ngFor="let game of games$ | async">
+  <mat-grid-list
+    [cols]="breakpoint"
+    (window:resize)="onResize($event)"
+    gutterSize="10px"
+    class="wrapper"
+  >
+    <mat-grid-tile *ngFor="let game of games$ | async">
       <app-game-details [game]="game" class="game-details"></app-game-details>
-    </div>
-  </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

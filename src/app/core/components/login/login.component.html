@@ -13,45 +13,48 @@
     *ngIf="!userLoggedIn; else logout"
   >
     <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="text"
-        id="email"
-        name="email"
-        class="form-control"
-        formControlName="email"
-        required
-      />
-      <span
-        class="message message--inline message-error"
-        *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched"
-        >This field is required.</span
-      >
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="text"
+          id="email"
+          name="email"
+          class="form-control"
+          formControlName="email"
+          required
+        />
+        <mat-error
+          *ngIf="
+            !loginForm.get('email').valid && loginForm.get('email').touched
+          "
+          >This field is required.</mat-error
+        >
+      </mat-form-field>
     </div>
     <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        class="form-control"
-        formControlName="password"
-        required
-      />
-      <span
-        class="message message--inline message-error"
-        *ngIf="
-          !loginForm.get('password').valid && loginForm.get('password').touched
-        "
-        >This field is required.</span
-      >
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          formControlName="password"
+          required
+        />
+        <mat-error
+          *ngIf="
+            !loginForm.get('password').valid &&
+            loginForm.get('password').touched
+          "
+          >This field is required.</mat-error
+        >
+      </mat-form-field>
     </div>
     <div class="form-group btn-wrapper">
-      <button
-        type="submit"
-        class="btn btn-primary"
-        [disabled]="!loginForm.valid"
-      >
+      <button mat-raised-button color="warn" type="submit" [disabled]="!loginForm.valid">
         Login
       </button>
     </div>
@@ -68,7 +71,7 @@
             alt="{{ messageType }}"
           />
         </div>
-        <a class="btn btn-primary" (click)="onLogout()">Logout</a>
+        <a mat-raised-button color="warn" (click)="onLogout()">Logout</a>
       </div>
     </div>
   </ng-template>

@@ -13,8 +13,6 @@ html {
 }
 
 body {
-	background-color: $colorWhite;
-	color: $colorBlack;
 	font-family: $fontBody;
 	font-size: 1.6rem;
 	line-height: 1.2;
@@ -60,10 +58,9 @@ img {
 	align-items: center;
 	justify-content: center;
 	padding: 10px 15px;
-	border: 1px solid $colorAlto;
+	border: 1px solid;
 	border-radius: $borderRadius-default;
 	margin: 20px 0;
-	color: $colorMineShaft;
 
 	&__wrapper-flex {
 		display: flex;
@@ -81,15 +78,5 @@ img {
 		padding: 10px 0;
 		border: 0;
 		margin: 0;
-	}
-
-	&-info {
-		border-color: $colorBlueberry;
-		color: $colorBlueberry;
-	}
-
-	&-error {
-		border-color: $colorChesnutRose;
-		color: $colorChesnutRose;
 	}
 }

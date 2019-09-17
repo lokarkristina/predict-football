@@ -1,0 +1,11 @@
+@keyframes roate-chip {
+  0% {
+    transform: rotate(-22deg);
+  }
+  50% {
+    transform: rotate(22deg);
+  }
+  100% {
+    transform: rotate(32deg);
+  }
+}

@@ -1,16 +1,19 @@
-<div class="game-details" [class.prediction-added]="predId">
+<mat-card class="game-details" [class.prediction-added]="predId" matRipple>
   <a [routerLink]="['/games', game.id]">
     <div class="game__number">
-      <h3>Game #{{ game.id }}</h3>
+      <h3 mat-card-subtitle>Game #{{ game.id }}</h3>
+      <mat-chip-list aria-label="Prediction added">
+        <mat-chip *ngIf="predId" selected>Prediction added!</mat-chip>
+      </mat-chip-list>
     </div>
-    <div class="game__players-wrapper">
-      <div class="game__playes-home">
+    <mat-card-content class="game__players-wrapper">
+      <mat-card-title class="game__playes-home">
         {{ homeCountryName }}
-      </div>
-      <span>:</span>
-      <div class="game__playes-away">
+      </mat-card-title>
+      <span>vs</span>
+      <mat-card-title class="game__playes-away">
         {{ awayCountryName }}
-      </div>
-    </div>
+      </mat-card-title>
+    </mat-card-content>
   </a>
-</div>
+</mat-card>

@@ -5,37 +5,40 @@
 >
   <div class="form-items-wrapper">
     <div class="form-group">
-      <input
-        type="text"
-        pattern="[0-9]*"
-        name="homeScore"
-        id="homeScore"
-        class="form-control"
-        formControlName="homeScore"
-      />
-      <label for="homeScore">Home</label>
+      <mat-form-field appearance="outline">
+        <mat-label>Home</mat-label>
+        <input
+          matInput
+          type="text"
+          pattern="[0-9]*"
+          name="homeScore"
+          id="homeScore"
+          class="form-control"
+          formControlName="homeScore"
+        />
+      </mat-form-field>
     </div>
     <div class="form-group">
-      <input
-        type="text"
-        pattern="[0-9]*"
-        name="awayScore"
-        id="awayScore"
-        class="form-control"
-        formControlName="awayScore"
-      />
-      <label for="awayScore">Guest</label>
+      <mat-form-field appearance="outline">
+        <mat-label>Away</mat-label>
+        <input
+          matInput
+          type="text"
+          pattern="[0-9]*"
+          name="awayScore"
+          id="awayScore"
+          class="form-control"
+          formControlName="awayScore"
+        />
+      </mat-form-field>
     </div>
   </div>
   <button
+    mat-raised-button
+    color="accent"
     type="submit"
-    class="btn btn-success"
     [disabled]="!predictionForm.valid"
   >
     {{ editMode ? 'Edit prediction' : 'Add prediction' }}
   </button>
 </form>
-
-<span *ngIf="!predictionForm.valid" class="message message-info">
-  Only numbers allowed!
-</span>

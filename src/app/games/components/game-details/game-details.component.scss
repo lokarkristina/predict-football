@@ -1,103 +1,73 @@
 @import '../../../../styles/variables';
 @import '../../../../styles/breakpoints';
 
-.game {
-  &-details {
-    margin: 5px 0 15px;
-    
-    > a {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      grid-template-rows: 1fr;
-      padding: 20px 15px;
-      border-radius: $borderRadius-default;
-      border: 1px solid $colorAlto;
+.mat {
+  &-card {
+    top: 0;
+    transition: all 280ms cubic-bezier(.4,0,.2,1);
 
-      @include sm {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.5fr 1fr;
-      }
+    &:hover,
+    &:focus {
+      top: -2px;
+      box-shadow: 10px 13px 10px -1px rgba(0, 0, 0, 0.2),
+        0 1px 1px 0 rgba(0, 0, 0, 0.14),
+        0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: 100%;
 
       &:focus,
       &:hover {
         text-decoration: none;
-        box-shadow: $boxShadow-default;
-        transform: scale(1.1);
       }
     }
   }
 
-  &__number {
+  &-card-content {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    &::after {
-      content: ':';
-      display: inline-block;
-      color: $colorAlto;
-      font-size: 2.7rem;
-      margin-left: 10px;
-      margin-bottom: 10px;
+    > * {
+      width: 100%;
+      text-align: center;
+    }
+
+    span {
+      margin: 20px 0;
     }
   }
 
-  &__players-wrapper {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 0.5fr 20px 0.5fr 0.5fr;
-    align-items: center;
-    font-size: 3.6rem;
-
-    @include sm {
-      grid-template-columns: 0.5fr 20px 0.5fr;
-      font-size: 2.6rem;
-    }
-
-    @include xs {
-      font-size: 2.2rem;
-    }
-
-    > * {
-      text-align: center;
-    }
+  &-chip-list {
+    position: absolute;
+    top: -10px;
+    right: -13px;
+    transform: rotate(12deg);
+    // animation: roate-chip 5s infinite alternate both;
   }
 }
 
-.prediction-added > a {
-  border-color: $colorMantis;
-
-  &::after,
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
+.game {
+  &-details {
+    width: 100%;
+    height: 100%;
   }
 
-  &::before {
-    content: 'Prediction added !';
-    top: 13px;
-    right: 13px;
-    padding: 5px 7px;
-    border: 2px dashed $colorMantis;
-    border-radius: 30px;
-    background-color: $colorWhite;
-    z-index: 1;
-  }
+  &__number {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-  &::after {
-    top: 0;
-    right: 0;
-    height: 0;
-    width: 0;
-    border-style: solid;
-    border-width: 50px 0 0 50px;
-    border-color: $colorMantis transparent transparent transparent;
-  }
-
-  &:focus,
-  &:hover {
-    border-width: 2px;
+    h3::after {
+      content: ':';
+      display: inline-block;
+    }
   }
 }

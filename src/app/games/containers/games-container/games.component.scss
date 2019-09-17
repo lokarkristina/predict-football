@@ -1,7 +1,15 @@
+
 .wrapper {
   margin-top: 50px;
+}
 
-  > div {
-    margin-bottom: 20px;
+.mat {
+  &-grid-tile {
+    overflow: visible;
   }
+}
+
+.game-details {
+  width: 100%;
+  height: 100%;
 }
