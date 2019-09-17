@@ -1,14 +1,18 @@
-<div class="header">
-  <nav class="header__nav">
-    <li
-      class="nav__item"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <a routerLink="/">Home</a>
-    </li>
-    <li class="nav__item" routerLinkActive="active">
-      <a routerLink="/login">{{ userLoggedIn ? 'Logout' : 'Login' }}</a>
-    </li>
-  </nav>
-</div>
+<mat-toolbar color="primary" class="header">
+  <mat-toolbar-row>
+    <nav class="header__nav">
+      <li
+        class="nav__item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a mat-button routerLink="/">Home</a>
+      </li>
+      <li class="nav__item" routerLinkActive="active">
+        <a mat-button routerLink="/login">{{
+          userLoggedIn ? 'Logout' : 'Login'
+        }}</a>
+      </li>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>

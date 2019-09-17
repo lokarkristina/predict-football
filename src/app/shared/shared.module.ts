@@ -11,6 +11,8 @@ import {
   MatCardModule,
   MatChipsModule,
   MatRippleModule,
+  MatToolbarModule,
+  MatMenuModule,
 } from '@angular/material';
 
 @NgModule({
@@ -25,6 +27,8 @@ import {
     MatCardModule,
     MatChipsModule,
     MatRippleModule,
+    MatToolbarModule,
+    MatMenuModule,
   ],
   exports: [
     CommonModule,
@@ -36,6 +40,8 @@ import {
     MatCardModule,
     MatChipsModule,
     MatRippleModule,
+    MatToolbarModule,
+    MatMenuModule,
   ],
 })
 export class SharedModule {}
