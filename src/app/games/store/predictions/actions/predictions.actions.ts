@@ -81,6 +81,26 @@ export class UpdatePredictionSuccess implements Action {
   constructor(public payload: Prediction) {}
 }
 
+// Delete Prediction
+export const DELETE_PREDICTION = '[Game] Delete prediction';
+export const DELETE_PREDICTION_FAIL = '[Game] Delete prediction Fail';
+export const DELETE_PREDICTION_SUCCESS = '[Game] Delete prediction Success';
+
+export class DeletePrediction implements Action {
+  readonly type = DELETE_PREDICTION;
+  constructor(public payload: number) {}
+}
+
+export class DeletePredictionFail implements Action {
+  readonly type = DELETE_PREDICTION_FAIL;
+  constructor(public payload: Prediction) {}
+}
+
+export class DeletePredictionSuccess implements Action {
+  readonly type = DELETE_PREDICTION_SUCCESS;
+  constructor(public payload: number) {}
+}
+
 export type PredictioinsActions =
   | AddPrediction
   | AddPredictionFail
@@ -93,4 +113,7 @@ export type PredictioinsActions =
   | FetchPredictionSuccess
   | UpdatePrediction
   | UpdatePredictionFail
-  | UpdatePredictionSuccess;
+  | UpdatePredictionSuccess
+  | DeletePrediction
+  | DeletePredictionFail
+  | DeletePredictionSuccess;

@@ -35,4 +35,10 @@ export class PredictionsService {
       .get<Prediction>(`${this.urlPredictions}/${id}`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
+
+  deletePrediction(id: number) {
+    return this.http
+      .delete(`${this.urlPredictions}/${id}`)
+      .pipe(catchError((error: any) => Observable.throw(error.json())));
+  }
 }

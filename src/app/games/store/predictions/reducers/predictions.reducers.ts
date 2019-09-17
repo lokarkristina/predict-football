@@ -108,6 +108,16 @@ export function PredictionsReducer(
       };
     }
 
+    case fromPredictions.DELETE_PREDICTION_SUCCESS: {
+      const id = +action.payload;
+      const { [id]: removed, ...entities } = state.entities;
+
+      return {
+        ...state,
+        entities,
+      };
+    }
+
     default:
       return state;
   }

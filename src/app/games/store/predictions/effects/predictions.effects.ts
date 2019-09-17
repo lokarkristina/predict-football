@@ -78,4 +78,18 @@ export class PredictionsEffects {
       );
     })
   );
+
+  @Effect()
+  deletePrediction$ = this.actions$.pipe(
+    ofType(PredictionActions.DELETE_PREDICTION),
+    map((action: PredictionActions.DeletePrediction) => action.payload),
+    switchMap(id => {
+      return this.predictionsService.deletePrediction(id).pipe(
+        map(() => new PredictionActions.DeletePredictionSuccess(id)),
+        catchError(error =>
+          of(new PredictionActions.DeletePredictionFail(error))
+        )
+      );
+    })
+  );
 }

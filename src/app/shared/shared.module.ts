@@ -13,6 +13,7 @@ import {
   MatRippleModule,
   MatToolbarModule,
   MatMenuModule,
+  MatDividerModule,
 } from '@angular/material';
 
 @NgModule({
@@ -29,6 +30,7 @@ import {
     MatRippleModule,
     MatToolbarModule,
     MatMenuModule,
+    MatDividerModule,
   ],
   exports: [
     CommonModule,
@@ -42,6 +44,7 @@ import {
     MatRippleModule,
     MatToolbarModule,
     MatMenuModule,
+    MatDividerModule,
   ],
 })
 export class SharedModule {}

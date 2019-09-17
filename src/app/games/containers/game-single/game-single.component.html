@@ -1,6 +1,7 @@
 <div *ngIf="game">
   <div class="game-single__header">
-    <a [routerLink]="['/games']">< Back to all games</a>
+    <a [routerLink]="['/games']" mat-button>< Back to all games</a>
+    <mat-divider></mat-divider>
   </div>
   <div class="game-single__body game-single">
     <div class="game__number">
@@ -36,7 +37,17 @@
       </div>
     </div>
     <div class="game__predictions" *ngIf="userLoggedIn; else login">
-      <h4>My prediciton</h4>
+      <div class="game__predictions-header">
+        <h3>My prediciton</h3>
+        <button
+          mat-raised-button
+          color="warn"
+          *ngIf="predId"
+          (click)="removePred(predId)"
+        >
+          Remove
+        </button>
+      </div>
       <app-prediction-add
         [predId]="predId"
         [gameId]="game.id"
@@ -54,6 +65,7 @@
       <a [routerLink]="['/login']">To login link</a>
     </ng-template>
   </div>
+  <mat-divider></mat-divider>
   <div class="game-single__footer">
     <div class="footer__right">
       <h4>Predictions by other users</h4>

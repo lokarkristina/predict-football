@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { Store } from '@ngrx/store';
 
 import * as fromStore from '../../store';
@@ -30,7 +32,8 @@ export class GameSingleComponent implements OnInit {
 
   constructor(
     private store: Store<fromStore.GameState>,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -72,6 +75,15 @@ export class GameSingleComponent implements OnInit {
             }
           });
         });
+    });
+  }
+
+  removePred(predId: number) {
+    this.store.dispatch(new fromStore.DeletePrediction(predId));
+    this.predId = null;
+    document.querySelector('form').reset();
+    this.snackBar.open('Prediction successfully deleted.', 'OK', {
+      duration: 3000,
     });
   }
 }
