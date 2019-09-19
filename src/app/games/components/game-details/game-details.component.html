@@ -1,4 +1,8 @@
-<mat-card class="game-details" [class.prediction-added]="predId" matRipple>
+<mat-card
+  class="game-details show"
+  [ngClass]="predId ? 'prediction-added' : 'prediction-not-added'"
+  matRipple
+>
   <a [routerLink]="['/games', game.id]">
     <div class="game__number">
       <h3 mat-card-subtitle>Game #{{ game.id }}</h3>

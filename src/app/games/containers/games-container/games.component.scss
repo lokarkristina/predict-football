@@ -9,6 +9,14 @@
   }
 }
 
+.games-filter__buttons {
+  .filter-button {
+    &.active {
+      color: #ff8080;
+    }
+  }
+}
+
 .game-details {
   width: 100%;
   height: 100%;

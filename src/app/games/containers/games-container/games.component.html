@@ -1,6 +1,29 @@
 <div>
   <h1>All games</h1>
   <hr />
+  <div class="games-filter__buttons">
+    <button
+      mat-button
+      (click)="onFilterSelection('all', $event)"
+      class="filter-button active"
+    >
+      Show all
+    </button>
+    <button
+      mat-button
+      (click)="onFilterSelection('prediction-added', $event)"
+      class="filter-button"
+    >
+      Predictions added
+    </button>
+    <button
+      mat-button
+      (click)="onFilterSelection('prediction-not-added', $event)"
+      class="filter-button"
+    >
+      No predictions
+    </button>
+  </div>
   <mat-grid-list
     [cols]="breakpoint"
     (window:resize)="onResize($event)"
