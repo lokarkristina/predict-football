@@ -100,23 +100,7 @@ export function UsersReducer(
       return {
         ...state,
         loading: true,
-      };
-    }
-
-    case fromCore.LOGOUT_USER_FAIL: {
-      return {
-        ...state,
-        loading: false,
-        loaded: false,
-      };
-    }
-
-    case fromCore.LOGOUT_USER_SUCCESS: {
-      return {
-        ...state,
-        loading: false,
-        loaded: true,
-        loggedInUser: null,
+        loggedInUser: undefined,
       };
     }
 

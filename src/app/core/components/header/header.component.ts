@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-
-import * as fromStore from '../../store';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +6,7 @@ import * as fromStore from '../../store';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  userLoggedIn: boolean;
+  constructor() {}
 
-  constructor(private store: Store<fromStore.UserState>) {}
-
-  ngOnInit() {
-    this.store
-      .select(fromStore.getLoggedInUser)
-      .subscribe(user => user && (this.userLoggedIn = true));
-  }
+  ngOnInit() {}
 }
